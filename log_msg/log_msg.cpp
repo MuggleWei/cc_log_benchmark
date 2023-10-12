@@ -1,5 +1,4 @@
 #include "log_msg.h"
-#include <bits/types/FILE.h>
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
