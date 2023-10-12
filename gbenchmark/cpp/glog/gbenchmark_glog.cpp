@@ -22,7 +22,7 @@ EXPAND_FUNCS
 
 void CustomPrefix(std::ostream &s, const google::LogMessageInfo &l, void *)
 {
-	s << l.severity[0] << std::setw(4) << 1900 + l.time.year() << '-'
+	s << l.severity << '|' << std::setw(4) << 1900 + l.time.year() << '-'
 	  << std::setw(2) << 1 + l.time.month() << '-' << std::setw(2)
 	  << l.time.day() << 'T' << std::setw(2) << l.time.hour() << ':'
 	  << std::setw(2) << l.time.min() << ':' << std::setw(2) << l.time.sec()
