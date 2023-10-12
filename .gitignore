@@ -1,0 +1,30 @@
+# vim
+*~
+compile_commands.json
+*.swp
+doc/compile_commands.json
+
+# vscode
+.vscode/
+
+# clangd
+.clangd/
+.cache/
+
+# clang format
+.clang-format
+
+# doxygen
+/doxy
+
+# tags
+/tags
+
+######### build & generated packages #########
+build/
+_hpkg/
+_hpb/
+_deps/
+_package/
+_packages/
+dist/
