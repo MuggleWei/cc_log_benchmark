@@ -282,8 +282,8 @@ endif()
 
 if (benchmark_fmtlog)
 	add_gbench(fmtlog ${gbenchmark_dir}/cpp/fmtlog)
-	add_dependencies(gbenchmark_fmtlog fmtlog-shared fmt)
-	target_link_libraries(gbenchmark_fmtlog fmtlog-shared fmt)
+	add_dependencies(gbenchmark_fmtlog fmtlog-static fmt)
+	target_link_libraries(gbenchmark_fmtlog fmtlog-static fmt)
 	target_include_directories(gbenchmark_fmtlog PUBLIC
 		${FETCHCONTENT_BASE_DIR}/fmtlog-src/
 		${FETCHCONTENT_BASE_DIR}/fmtlog-src/fmt/include
