@@ -3,7 +3,7 @@
 #include <vector>
 #include <mutex>
 #include "benchmark/benchmark.h"
-#include "log_msg.h"
+#include "log_msg/log_msg.h"
 #include "haclog/haclog.h"
 
 #define ITER_COUNT 10000

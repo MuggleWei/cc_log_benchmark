@@ -4,7 +4,7 @@
 #include <vector>
 #include <array>
 #include "benchmark/benchmark.h"
-#include "log_msg.h"
+#include "log_msg/log_msg.h"
 #include "NanoLogCpp17.h"
 using namespace NanoLog::LogLevels;
 

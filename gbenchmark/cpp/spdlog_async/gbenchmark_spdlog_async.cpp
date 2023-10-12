@@ -2,7 +2,7 @@
 #include <thread>
 #include <vector>
 #include "benchmark/benchmark.h"
-#include "log_msg.h"
+#include "log_msg/log_msg.h"
 #include "spdlog/spdlog.h"
 #include "spdlog/async.h"
 #include "spdlog/sinks/basic_file_sink.h"

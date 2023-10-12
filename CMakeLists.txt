@@ -136,7 +136,7 @@ function(add_gbench name folder)
 	target_include_directories(${name} PRIVATE
 		${folder}
 		${FETCHCONTENT_BASE_DIR}/benchmark-src
-		${CMAKE_CURRENT_LIST_DIR}/log_msg)
+		${CMAKE_CURRENT_LIST_DIR})
 	target_link_libraries(${name} benchmark log_msg)
 
 	# save temp object file, such as: asm code
@@ -163,11 +163,11 @@ if (benchmark_spdlog)
 		)
 	FetchContent_MakeAvailable(spdlog)
 
-	add_gbench(spdlog_sync ${gbenchmark_dir}/spdlog_sync)
+	add_gbench(spdlog_sync ${gbenchmark_dir}/cpp/spdlog_sync)
 	add_dependencies(gbenchmark_spdlog_sync spdlog)
 	target_link_libraries(gbenchmark_spdlog_sync spdlog)
 
-	add_gbench(spdlog_async ${gbenchmark_dir}/spdlog_async)
+	add_gbench(spdlog_async ${gbenchmark_dir}/cpp/spdlog_async)
 	add_dependencies(gbenchmark_spdlog_async spdlog)
 	target_link_libraries(gbenchmark_spdlog_async spdlog)
 endif()
@@ -201,7 +201,7 @@ if (benchmark_nanolog)
 		${FETCHCONTENT_BASE_DIR}/nanolog-src/runtime/libNanoLog.a
 		)
 
-	add_gbench(nanolog ${gbenchmark_dir}/nanolog)
+	add_gbench(nanolog ${gbenchmark_dir}/cpp/nanolog)
 	add_dependencies(gbenchmark_nanolog nanolog_lib)
 	target_link_libraries(gbenchmark_nanolog nanolog_lib)
 	target_include_directories(gbenchmark_nanolog PUBLIC ${FETCHCONTENT_BASE_DIR}/nanolog-src/runtime)
@@ -218,7 +218,7 @@ if (benchmark_haclog)
 		)
 	FetchContent_MakeAvailable(haclog)
 
-	add_gbench(haclog ${gbenchmark_dir}/haclog)
+	add_gbench(haclog ${gbenchmark_dir}/c/haclog)
 	add_dependencies(gbenchmark_haclog haclog)
 	target_link_libraries(gbenchmark_haclog haclog)
 endif()
