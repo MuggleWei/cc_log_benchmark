@@ -38,8 +38,9 @@ public:
 			el::Loggers::reconfigureAllLoggers(
 				el::ConfigurationType::Format,
 				"%level|%datetime|%fbase:%line|%func|%thread - %msg");
-			el::Loggers::reconfigureAllLoggers(el::ConfigurationType::Filename,
-											   "logs/easyloggingpp.log");
+			el::Loggers::reconfigureAllLoggers(
+				el::ConfigurationType::Filename,
+				"logs/gbenchmark_easyloggingpp.log");
 			el::Loggers::reconfigureAllLoggers(el::ConfigurationType::ToFile,
 											   "true");
 			el::Loggers::reconfigureAllLoggers(

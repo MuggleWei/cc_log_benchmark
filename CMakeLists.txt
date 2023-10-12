@@ -57,9 +57,14 @@ set(FETCHCONTENT_BASE_DIR ${CMAKE_BINARY_DIR}/_deps)
 # options
 ################################
 
-set(benchmark_spdlog ON CACHE BOOL "generate benchmark: spdlog")
-set(benchmark_glog ON CACHE BOOL "generate benchmark: glog")
 set(benchmark_easyloggingpp ON CACHE BOOL "generate benchmark: easyloggingpp")
+if (APPLE)
+	set(benchmark_fmtlog OFF CACHE BOOL "generate benchmark: fmtlog")
+else()
+	set(benchmark_fmtlog ON CACHE BOOL "generate benchmark: fmtlog")
+endif()
+set(benchmark_glog ON CACHE BOOL "generate benchmark: glog")
+set(benchmark_haclog ON CACHE BOOL "generate benchmark: haclog")
 
 if (UNIX)
 	if (${CMAKE_SYSTEM_PROCESSOR} MATCHES "arm")
@@ -71,7 +76,8 @@ else()
 	set(benchmark_nanolog OFF CACHE BOOL "generate benchmark: nanolog")
 endif()
 
-set(benchmark_haclog ON CACHE BOOL "generate benchmark: haclog")
+set(benchmark_spdlog ON CACHE BOOL "generate benchmark: spdlog")
+
 
 ################################
 # log message
@@ -168,16 +174,42 @@ endfunction()
 # logging libraries
 ################################
 
-if (benchmark_spdlog)
-	message("# fetch spdlog")
+if (benchmark_easyloggingpp)
+	message("# fetch easyloggingpp")
+	set(build_static_lib ON)
 	FetchContent_Declare(
-		spdlog
-		GIT_REPOSITORY https://github.com/gabime/spdlog.git
-		GIT_TAG v1.12.0
+		easyloggingpp
+		GIT_REPOSITORY https://github.com/abumq/easyloggingpp.git
+		GIT_TAG v9.97.1
 		GIT_SHALLOW TRUE
 		GIT_PROGRESS TRUE
 		)
-	FetchContent_MakeAvailable(spdlog)
+	FetchContent_MakeAvailable(easyloggingpp)
+	target_compile_definitions(easyloggingpp PUBLIC ELPP_THREAD_SAFE)
+endif()
+
+if (benchmark_fmtlog)
+	message("# fetch fmtlog")
+	FetchContent_Declare(
+		fmtlog
+		GIT_REPOSITORY https://github.com/MengRao/fmtlog.git
+		GIT_TAG v2.2.1
+		GIT_SHALLOW TRUE
+		GIT_PROGRESS TRUE
+		)
+	FetchContent_MakeAvailable(fmtlog)
+endif()
+
+if (benchmark_haclog)
+	message("# fetch haclog")
+	FetchContent_Declare(
+		haclog
+		GIT_REPOSITORY https://github.com/MuggleWei/haclog.git
+		GIT_TAG "v0.0.2"
+		GIT_SHALLOW TRUE
+		GIT_PROGRESS TRUE
+		)
+	FetchContent_MakeAvailable(haclog)
 endif()
 
 if (benchmark_glog)
@@ -191,20 +223,6 @@ if (benchmark_glog)
 		GIT_PROGRESS TRUE
 		)
 	FetchContent_MakeAvailable(glog)
-endif()
-
-if (benchmark_easyloggingpp)
-	message("# fetch easyloggingpp")
-	set(build_static_lib ON)
-	FetchContent_Declare(
-		easyloggingpp
-		GIT_REPOSITORY https://github.com/abumq/easyloggingpp.git
-		GIT_TAG v9.97.1
-		GIT_SHALLOW TRUE
-		GIT_PROGRESS TRUE
-		)
-	FetchContent_MakeAvailable(easyloggingpp)
-	target_compile_definitions(easyloggingpp PUBLIC ELPP_THREAD_SAFE)
 endif()
 
 if (benchmark_nanolog)
@@ -237,16 +255,16 @@ if (benchmark_nanolog)
 		)
 endif()
 
-if (benchmark_haclog)
-	message("# fetch haclog")
+if (benchmark_spdlog)
+	message("# fetch spdlog")
 	FetchContent_Declare(
-		haclog
-		GIT_REPOSITORY https://github.com/MuggleWei/haclog.git
-		GIT_TAG "v0.0.2"
+		spdlog
+		GIT_REPOSITORY https://github.com/gabime/spdlog.git
+		GIT_TAG v1.12.0
 		GIT_SHALLOW TRUE
 		GIT_PROGRESS TRUE
 		)
-	FetchContent_MakeAvailable(haclog)
+	FetchContent_MakeAvailable(spdlog)
 endif()
 
 ################################
@@ -254,6 +272,42 @@ endif()
 ################################
 
 set(gbenchmark_dir ${CMAKE_CURRENT_LIST_DIR}/gbenchmark)
+
+if (benchmark_easyloggingpp)
+	add_gbench(easyloggingpp ${gbenchmark_dir}/cpp/easyloggingpp)
+	add_dependencies(gbenchmark_easyloggingpp easyloggingpp)
+	target_link_libraries(gbenchmark_easyloggingpp easyloggingpp)
+	target_include_directories(gbenchmark_easyloggingpp PUBLIC ${FETCHCONTENT_BASE_DIR}/easyloggingpp-src/src)
+endif()
+
+if (benchmark_fmtlog)
+	add_gbench(fmtlog ${gbenchmark_dir}/cpp/fmtlog)
+	add_dependencies(gbenchmark_fmtlog fmtlog-shared fmt)
+	target_link_libraries(gbenchmark_fmtlog fmtlog-shared fmt)
+	target_include_directories(gbenchmark_fmtlog PUBLIC
+		${FETCHCONTENT_BASE_DIR}/fmtlog-src/
+		${FETCHCONTENT_BASE_DIR}/fmtlog-src/fmt/include
+		)
+endif()
+
+if (benchmark_glog)
+	add_gbench(glog ${gbenchmark_dir}/cpp/glog)
+	add_dependencies(gbenchmark_glog glog)
+	target_link_libraries(gbenchmark_glog glog)
+endif()
+
+if (benchmark_haclog)
+	add_gbench(haclog ${gbenchmark_dir}/c/haclog)
+	add_dependencies(gbenchmark_haclog haclog)
+	target_link_libraries(gbenchmark_haclog haclog)
+endif()
+
+if (benchmark_nanolog)
+	add_gbench(nanolog ${gbenchmark_dir}/cpp/nanolog)
+	add_dependencies(gbenchmark_nanolog nanolog_lib)
+	target_link_libraries(gbenchmark_nanolog nanolog_lib)
+	target_include_directories(gbenchmark_nanolog PUBLIC ${FETCHCONTENT_BASE_DIR}/nanolog-src/runtime)
+endif()
 
 if (benchmark_spdlog)
 	add_gbench(spdlog_sync ${gbenchmark_dir}/cpp/spdlog_sync)
@@ -265,34 +319,11 @@ if (benchmark_spdlog)
 	target_link_libraries(gbenchmark_spdlog_async spdlog)
 endif()
 
-if (benchmark_glog)
-	add_gbench(glog ${gbenchmark_dir}/cpp/glog)
-	add_dependencies(gbenchmark_glog glog)
-	target_link_libraries(gbenchmark_glog glog)
-endif()
-
-if (benchmark_nanolog)
-	add_gbench(nanolog ${gbenchmark_dir}/cpp/nanolog)
-	add_dependencies(gbenchmark_nanolog nanolog_lib)
-	target_link_libraries(gbenchmark_nanolog nanolog_lib)
-	target_include_directories(gbenchmark_nanolog PUBLIC ${FETCHCONTENT_BASE_DIR}/nanolog-src/runtime)
-endif()
-
-if (benchmark_easyloggingpp)
-	add_gbench(easyloggingpp ${gbenchmark_dir}/cpp/easyloggingpp)
-	add_dependencies(gbenchmark_easyloggingpp easyloggingpp)
-	target_link_libraries(gbenchmark_easyloggingpp easyloggingpp)
-	target_include_directories(gbenchmark_easyloggingpp PUBLIC ${FETCHCONTENT_BASE_DIR}/easyloggingpp-src/src)
-endif()
-
-if (benchmark_haclog)
-	add_gbench(haclog ${gbenchmark_dir}/c/haclog)
-	add_dependencies(gbenchmark_haclog haclog)
-	target_link_libraries(gbenchmark_haclog haclog)
-endif()
-
 message("# --------------------------------")
-message("# benchmark spdlog: ${benchmark_spdlog}")
-message("# benchmark nanolog: ${benchmark_nanolog}")
+message("# benchmark easyloggingpp: ${benchmark_easyloggingpp}")
+message("# benchmark fmtlog: ${benchmark_fmtlog}")
+message("# benchmark glog: ${benchmark_glog}")
 message("# benchmark haclog: ${benchmark_haclog}")
+message("# benchmark nanolog: ${benchmark_nanolog}")
+message("# benchmark spdlog: ${benchmark_spdlog}")
 message("# --------------------------------")
