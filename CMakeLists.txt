@@ -97,7 +97,7 @@ target_link_libraries(gen_random_data log_msg)
 # google benchmark
 ################################
 
-message("-- fetch google benchmark")
+message("# fetch google benchmark")
 set(BENCHMARK_ENABLE_GTEST_TESTS OFF CACHE BOOL "")
 set(BENCHMARK_ENABLE_TESTING OFF CACHE BOOL "")
 FetchContent_Declare(
@@ -107,6 +107,16 @@ FetchContent_Declare(
 	GIT_SHALLOW TRUE
 	GIT_PROGRESS TRUE)
 FetchContent_MakeAvailable(benchmark)
+
+message("# fetch mugglec")
+SET(MUGGLE_BUILD_BENCHMARK_UTILS ON CACHE BOOL "")
+FetchContent_Declare(
+	mugglec
+	GIT_REPOSITORY https://github.com/MuggleWei/mugglec.git
+	GIT_TAG v1.3.4
+	GIT_SHALLOW TRUE
+	GIT_PROGRESS TRUE)
+FetchContent_MakeAvailable(mugglec)
 
 function(add_gbench name folder)
 	message("add gbenchmark ${name} ${folder}")
@@ -154,10 +164,8 @@ function(add_gbench name folder)
 endfunction()
 
 ################################
-# benchmark
+# logging libraries
 ################################
-
-set(gbenchmark_dir ${CMAKE_CURRENT_LIST_DIR}/gbenchmark)
 
 if (benchmark_spdlog)
 	message("# fetch spdlog")
@@ -169,18 +177,11 @@ if (benchmark_spdlog)
 		GIT_PROGRESS TRUE
 		)
 	FetchContent_MakeAvailable(spdlog)
-
-	add_gbench(spdlog_sync ${gbenchmark_dir}/cpp/spdlog_sync)
-	add_dependencies(gbenchmark_spdlog_sync spdlog)
-	target_link_libraries(gbenchmark_spdlog_sync spdlog)
-
-	add_gbench(spdlog_async ${gbenchmark_dir}/cpp/spdlog_async)
-	add_dependencies(gbenchmark_spdlog_async spdlog)
-	target_link_libraries(gbenchmark_spdlog_async spdlog)
 endif()
 
 if (benchmark_glog)
 	message("# fetch glog")
+	set(WITH_GFLAGS OFF)
 	FetchContent_Declare(
 		glog
 		GIT_REPOSITORY https://github.com/google/glog.git
@@ -189,10 +190,6 @@ if (benchmark_glog)
 		GIT_PROGRESS TRUE
 		)
 	FetchContent_MakeAvailable(glog)
-
-	add_gbench(glog ${gbenchmark_dir}/cpp/glog)
-	add_dependencies(gbenchmark_glog glog)
-	target_link_libraries(gbenchmark_glog glog)
 endif()
 
 if (benchmark_nanolog)
@@ -223,11 +220,6 @@ if (benchmark_nanolog)
 		PROPERTY IMPORTED_LOCATION 
 		${FETCHCONTENT_BASE_DIR}/nanolog-src/runtime/libNanoLog.a
 		)
-
-	add_gbench(nanolog ${gbenchmark_dir}/cpp/nanolog)
-	add_dependencies(gbenchmark_nanolog nanolog_lib)
-	target_link_libraries(gbenchmark_nanolog nanolog_lib)
-	target_include_directories(gbenchmark_nanolog PUBLIC ${FETCHCONTENT_BASE_DIR}/nanolog-src/runtime)
 endif()
 
 if (benchmark_haclog)
@@ -240,7 +232,38 @@ if (benchmark_haclog)
 		GIT_PROGRESS TRUE
 		)
 	FetchContent_MakeAvailable(haclog)
+endif()
 
+################################
+# gbenchmark
+################################
+
+set(gbenchmark_dir ${CMAKE_CURRENT_LIST_DIR}/gbenchmark)
+
+if (benchmark_spdlog)
+	add_gbench(spdlog_sync ${gbenchmark_dir}/cpp/spdlog_sync)
+	add_dependencies(gbenchmark_spdlog_sync spdlog)
+	target_link_libraries(gbenchmark_spdlog_sync spdlog)
+
+	add_gbench(spdlog_async ${gbenchmark_dir}/cpp/spdlog_async)
+	add_dependencies(gbenchmark_spdlog_async spdlog)
+	target_link_libraries(gbenchmark_spdlog_async spdlog)
+endif()
+
+if (benchmark_glog)
+	add_gbench(glog ${gbenchmark_dir}/cpp/glog)
+	add_dependencies(gbenchmark_glog glog)
+	target_link_libraries(gbenchmark_glog glog)
+endif()
+
+if (benchmark_nanolog)
+	add_gbench(nanolog ${gbenchmark_dir}/cpp/nanolog)
+	add_dependencies(gbenchmark_nanolog nanolog_lib)
+	target_link_libraries(gbenchmark_nanolog nanolog_lib)
+	target_include_directories(gbenchmark_nanolog PUBLIC ${FETCHCONTENT_BASE_DIR}/nanolog-src/runtime)
+endif()
+
+if (benchmark_haclog)
 	add_gbench(haclog ${gbenchmark_dir}/c/haclog)
 	add_dependencies(gbenchmark_haclog haclog)
 	target_link_libraries(gbenchmark_haclog haclog)

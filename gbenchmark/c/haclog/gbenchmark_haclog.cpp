@@ -34,8 +34,8 @@ public:
 	{
 		std::call_once(init_flag, []() {
 			static haclog_file_handler_t file_handler = {};
-			if (haclog_file_handler_init(&file_handler, "logs/haclog_basic.log",
-										 "w") != 0) {
+			if (haclog_file_handler_init(
+					&file_handler, "logs/gbenchmark_haclog.log", "w") != 0) {
 				exit(EXIT_FAILURE);
 			}
 			haclog_handler_set_level((haclog_handler_t *)&file_handler,

@@ -51,11 +51,12 @@ public:
 			FLAGS_alsologtostderr = 0;
 			FLAGS_timestamp_in_logfile_name = false;
 
-			google::SetLogDestination(google::GLOG_INFO, "logs/glog.info.log");
+			google::SetLogDestination(google::GLOG_INFO,
+									  "logs/gbenchmark_glog.info.log");
 			google::SetLogDestination(google::GLOG_WARNING,
-									  "logs/glog.warn.log");
+									  "logs/gbenchmark_glog.warn.log");
 			google::SetLogDestination(google::GLOG_ERROR,
-									  "logs/glog.error.log");
+									  "logs/gbenchmark_glog.error.log");
 
 			google::InitGoogleLogging("gbenchmark_glog", &CustomPrefix);
 		});

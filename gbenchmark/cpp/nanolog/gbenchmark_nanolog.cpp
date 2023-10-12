@@ -36,7 +36,7 @@ public:
 	{
 		std::call_once(init_flag, []() {
 			std::filesystem::create_directories("logs");
-			NanoLog::setLogFile("logs/nanolog_basic.log");
+			NanoLog::setLogFile("logs/gbenchmark_nanolog.log");
 			NanoLog::setLogLevel(NOTICE);
 			NANO_LOG(NOTICE, "init success");
 		});
