@@ -79,7 +79,7 @@ else()
 	set(benchmark_nanolog OFF CACHE BOOL "generate benchmark: nanolog")
 endif()
 
-if (APPLE)
+if (APPLE OR WIN32)
 	set(benchmark_reckless OFF CACHE BOOL "generate benchmark: reckless")
 else()
 	set(benchmark_reckless ON CACHE BOOL "generate benchmark: reckless")
