@@ -59,15 +59,16 @@ set(FETCHCONTENT_BASE_DIR ${CMAKE_BINARY_DIR}/_deps)
 
 set(benchmark_spdlog ON CACHE BOOL "generate benchmark: spdlog")
 set(benchmark_glog ON CACHE BOOL "generate benchmark: glog")
+set(benchmark_easyloggingpp ON CACHE BOOL "generate benchmark: easyloggingpp")
 
 if (UNIX)
 	if (${CMAKE_SYSTEM_PROCESSOR} MATCHES "arm")
-		set(benchmark_nanolog OFF CACHE BOOL "generate benchmark: nano")
+		set(benchmark_nanolog OFF CACHE BOOL "generate benchmark: nanolog")
 	else()
-		set(benchmark_nanolog ON CACHE BOOL "generate benchmark: nano")
+		set(benchmark_nanolog ON CACHE BOOL "generate benchmark: nanolog")
 	endif()
 else()
-	set(benchmark_nanolog OFF CACHE BOOL "generate benchmark: nano")
+	set(benchmark_nanolog OFF CACHE BOOL "generate benchmark: nanolog")
 endif()
 
 set(benchmark_haclog ON CACHE BOOL "generate benchmark: haclog")
@@ -192,6 +193,20 @@ if (benchmark_glog)
 	FetchContent_MakeAvailable(glog)
 endif()
 
+if (benchmark_easyloggingpp)
+	message("# fetch easyloggingpp")
+	set(build_static_lib ON)
+	FetchContent_Declare(
+		easyloggingpp
+		GIT_REPOSITORY https://github.com/abumq/easyloggingpp.git
+		GIT_TAG v9.97.1
+		GIT_SHALLOW TRUE
+		GIT_PROGRESS TRUE
+		)
+	FetchContent_MakeAvailable(easyloggingpp)
+	target_compile_definitions(easyloggingpp PUBLIC ELPP_THREAD_SAFE)
+endif()
+
 if (benchmark_nanolog)
 	message("# fetch nanolog")
 	FetchContent_Declare(
@@ -261,6 +276,13 @@ if (benchmark_nanolog)
 	add_dependencies(gbenchmark_nanolog nanolog_lib)
 	target_link_libraries(gbenchmark_nanolog nanolog_lib)
 	target_include_directories(gbenchmark_nanolog PUBLIC ${FETCHCONTENT_BASE_DIR}/nanolog-src/runtime)
+endif()
+
+if (benchmark_easyloggingpp)
+	add_gbench(easyloggingpp ${gbenchmark_dir}/cpp/easyloggingpp)
+	add_dependencies(gbenchmark_easyloggingpp easyloggingpp)
+	target_link_libraries(gbenchmark_easyloggingpp easyloggingpp)
+	target_include_directories(gbenchmark_easyloggingpp PUBLIC ${FETCHCONTENT_BASE_DIR}/easyloggingpp-src/src)
 endif()
 
 if (benchmark_haclog)
