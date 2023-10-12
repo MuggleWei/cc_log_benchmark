@@ -58,12 +58,15 @@ set(FETCHCONTENT_BASE_DIR ${CMAKE_BINARY_DIR}/_deps)
 ################################
 
 set(benchmark_easyloggingpp ON CACHE BOOL "generate benchmark: easyloggingpp")
+
 if (APPLE)
 	set(benchmark_fmtlog OFF CACHE BOOL "generate benchmark: fmtlog")
 else()
 	set(benchmark_fmtlog ON CACHE BOOL "generate benchmark: fmtlog")
 endif()
+
 set(benchmark_glog ON CACHE BOOL "generate benchmark: glog")
+
 set(benchmark_haclog ON CACHE BOOL "generate benchmark: haclog")
 
 if (UNIX)
@@ -74,6 +77,12 @@ if (UNIX)
 	endif()
 else()
 	set(benchmark_nanolog OFF CACHE BOOL "generate benchmark: nanolog")
+endif()
+
+if (APPLE)
+	set(benchmark_reckless OFF CACHE BOOL "generate benchmark: reckless")
+else()
+	set(benchmark_reckless ON CACHE BOOL "generate benchmark: reckless")
 endif()
 
 set(benchmark_spdlog ON CACHE BOOL "generate benchmark: spdlog")
@@ -124,6 +133,8 @@ FetchContent_Declare(
 	GIT_SHALLOW TRUE
 	GIT_PROGRESS TRUE)
 FetchContent_MakeAvailable(mugglec)
+
+find_package(Threads)
 
 function(add_gbench name folder)
 	message("add gbenchmark ${name} ${folder}")
@@ -255,6 +266,18 @@ if (benchmark_nanolog)
 		)
 endif()
 
+if (benchmark_reckless)
+	message("# fetch reckless")
+	FetchContent_Declare(
+		reckless
+		GIT_REPOSITORY https://github.com/mattiasflodin/reckless.git
+		GIT_TAG v3.0.3
+		GIT_SHALLOW TRUE
+		GIT_PROGRESS TRUE
+		)
+	FetchContent_MakeAvailable(reckless)
+endif()
+
 if (benchmark_spdlog)
 	message("# fetch spdlog")
 	FetchContent_Declare(
@@ -309,6 +332,16 @@ if (benchmark_nanolog)
 	target_include_directories(gbenchmark_nanolog PUBLIC ${FETCHCONTENT_BASE_DIR}/nanolog-src/runtime)
 endif()
 
+if (benchmark_reckless)
+	add_gbench(reckless ${gbenchmark_dir}/cpp/reckless)
+	add_dependencies(gbenchmark_reckless reckless)
+	target_link_libraries(gbenchmark_reckless reckless)
+	if (Threads_FOUND)
+		target_link_libraries(gbenchmark_reckless reckless ${CMAKE_THREAD_LIBS_INIT})
+	endif()
+	target_include_directories(gbenchmark_reckless PUBLIC ${FETCHCONTENT_BASE_DIR}/reckless-src/reckless/include)
+endif()
+
 if (benchmark_spdlog)
 	add_gbench(spdlog_sync ${gbenchmark_dir}/cpp/spdlog_sync)
 	add_dependencies(gbenchmark_spdlog_sync spdlog)
@@ -325,5 +358,6 @@ message("# benchmark fmtlog: ${benchmark_fmtlog}")
 message("# benchmark glog: ${benchmark_glog}")
 message("# benchmark haclog: ${benchmark_haclog}")
 message("# benchmark nanolog: ${benchmark_nanolog}")
+message("# benchmark reckless: ${benchmark_reckless}")
 message("# benchmark spdlog: ${benchmark_spdlog}")
 message("# --------------------------------")
