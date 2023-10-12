@@ -58,16 +58,19 @@ set(FETCHCONTENT_BASE_DIR ${CMAKE_BINARY_DIR}/_deps)
 ################################
 
 set(benchmark_spdlog ON CACHE BOOL "generate benchmark: spdlog")
+set(benchmark_glog ON CACHE BOOL "generate benchmark: glog")
+
 if (UNIX)
 	if (${CMAKE_SYSTEM_PROCESSOR} MATCHES "arm")
-		set(benchmark_nanolog OFF CACHE BOOL "generate benchmark: spdlog")
+		set(benchmark_nanolog OFF CACHE BOOL "generate benchmark: nano")
 	else()
-		set(benchmark_nanolog ON CACHE BOOL "generate benchmark: spdlog")
+		set(benchmark_nanolog ON CACHE BOOL "generate benchmark: nano")
 	endif()
 else()
-	set(benchmark_nanolog OFF CACHE BOOL "generate benchmark: spdlog")
+	set(benchmark_nanolog OFF CACHE BOOL "generate benchmark: nano")
 endif()
-set(benchmark_haclog ON CACHE BOOL "generate benchmark: spdlog")
+
+set(benchmark_haclog ON CACHE BOOL "generate benchmark: haclog")
 
 ################################
 # log message
@@ -176,6 +179,22 @@ if (benchmark_spdlog)
 	target_link_libraries(gbenchmark_spdlog_async spdlog)
 endif()
 
+if (benchmark_glog)
+	message("# fetch glog")
+	FetchContent_Declare(
+		glog
+		GIT_REPOSITORY https://github.com/google/glog.git
+		GIT_TAG v0.6.0
+		GIT_SHALLOW TRUE
+		GIT_PROGRESS TRUE
+		)
+	FetchContent_MakeAvailable(glog)
+
+	add_gbench(glog ${gbenchmark_dir}/cpp/glog)
+	add_dependencies(gbenchmark_glog glog)
+	target_link_libraries(gbenchmark_glog glog)
+endif()
+
 if (benchmark_nanolog)
 	message("# fetch nanolog")
 	FetchContent_Declare(
@@ -226,3 +245,9 @@ if (benchmark_haclog)
 	add_dependencies(gbenchmark_haclog haclog)
 	target_link_libraries(gbenchmark_haclog haclog)
 endif()
+
+message("# --------------------------------")
+message("# benchmark spdlog: ${benchmark_spdlog}")
+message("# benchmark nanolog: ${benchmark_nanolog}")
+message("# benchmark haclog: ${benchmark_haclog}")
+message("# --------------------------------")

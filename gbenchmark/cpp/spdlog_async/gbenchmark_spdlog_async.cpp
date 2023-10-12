@@ -54,21 +54,5 @@ public:
 	std::vector<LogMsg> log_msgs;
 };
 
-BENCHMARK_DEFINE_F(SpdlogAsyncFixture, async)(benchmark::State &state)
-{
-	static thread_local int idx = 0;
-	const int nfuncs = sizeof(log_funcs) / sizeof(log_funcs[0]);
-	const int n_msg = (int)log_msgs.size();
-	if (log_msgs.size() < nfuncs) {
-		fprintf(stderr, "number of log message < nfuncs is not allowed");
-		exit(EXIT_FAILURE);
-	}
-
-	for (auto _ : state) {
-		log_funcs[idx % nfuncs](log_msgs[idx]);
-		idx = (idx + 1) % n_msg;
-	}
-}
-
 // min time
 RUN_GBENCHMARK(SpdlogAsyncFixture, async)

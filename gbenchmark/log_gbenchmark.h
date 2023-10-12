@@ -5,31 +5,46 @@
 #define REPEAT_COUNT 5
 #define MIN_TIME 3.0
 
-#define RUN_GBENCHMARK(fixture, name)                                          \
-  /* min time */                                                               \
-  BENCHMARK_REGISTER_F(fixture, name)->Threads(1)->MinTime(MIN_TIME);          \
-  BENCHMARK_REGISTER_F(fixture, name)->Threads(2)->MinTime(MIN_TIME);          \
-  BENCHMARK_REGISTER_F(fixture, name)->Threads(4)->MinTime(MIN_TIME);          \
-  /* iteration * repeat */                                                     \
-  BENCHMARK_REGISTER_F(fixture, name)                                          \
-      ->Threads(1)                                                             \
-      ->Iterations(ITER_COUNT)                                                 \
-      ->Repetitions(REPEAT_COUNT);                                             \
-  BENCHMARK_REGISTER_F(fixture, name)                                          \
-      ->Threads((std::thread::hardware_concurrency() / 2) > 0                  \
-                    ? (std::thread::hardware_concurrency() / 2)                \
-                    : 1)                                                       \
-      ->Iterations(ITER_COUNT)                                                 \
-      ->Repetitions(REPEAT_COUNT);                                             \
-  BENCHMARK_REGISTER_F(fixture, name)                                          \
-      ->Threads(std::thread::hardware_concurrency())                           \
-      ->Iterations(ITER_COUNT)                                                 \
-      ->Repetitions(REPEAT_COUNT);                                             \
-  BENCHMARK_REGISTER_F(fixture, name)                                          \
-      ->Threads(std::thread::hardware_concurrency() * 2)                       \
-      ->Iterations(ITER_COUNT)                                                 \
-      ->Repetitions(REPEAT_COUNT);                                             \
-  /* gbenchmark main*/                                                         \
-  BENCHMARK_MAIN();
+#define RUN_GBENCHMARK(fixture, name)                                         \
+	BENCHMARK_DEFINE_F(fixture, name)(benchmark::State & state)               \
+	{                                                                         \
+		static thread_local int idx = 0;                                      \
+		const int nfuncs = sizeof(log_funcs) / sizeof(log_funcs[0]);          \
+		const int n_msg = (int)log_msgs.size();                               \
+		if (log_msgs.size() < nfuncs) {                                       \
+			fprintf(stderr, "number of log message < nfuncs is not allowed"); \
+			exit(EXIT_FAILURE);                                               \
+		}                                                                     \
+                                                                              \
+		for (auto _ : state) {                                                \
+			log_funcs[idx % nfuncs](log_msgs[idx]);                           \
+			idx = (idx + 1) % n_msg;                                          \
+		}                                                                     \
+	}                                                                         \
+	/* min time */                                                            \
+	BENCHMARK_REGISTER_F(fixture, name)->Threads(1)->MinTime(MIN_TIME);       \
+	BENCHMARK_REGISTER_F(fixture, name)->Threads(2)->MinTime(MIN_TIME);       \
+	BENCHMARK_REGISTER_F(fixture, name)->Threads(4)->MinTime(MIN_TIME);       \
+	/* iteration * repeat */                                                  \
+	BENCHMARK_REGISTER_F(fixture, name)                                       \
+		->Threads(1)                                                          \
+		->Iterations(ITER_COUNT)                                              \
+		->Repetitions(REPEAT_COUNT);                                          \
+	BENCHMARK_REGISTER_F(fixture, name)                                       \
+		->Threads((std::thread::hardware_concurrency() / 2) > 0 ?             \
+					  (std::thread::hardware_concurrency() / 2) :             \
+					  1)                                                      \
+		->Iterations(ITER_COUNT)                                              \
+		->Repetitions(REPEAT_COUNT);                                          \
+	BENCHMARK_REGISTER_F(fixture, name)                                       \
+		->Threads(std::thread::hardware_concurrency())                        \
+		->Iterations(ITER_COUNT)                                              \
+		->Repetitions(REPEAT_COUNT);                                          \
+	BENCHMARK_REGISTER_F(fixture, name)                                       \
+		->Threads(std::thread::hardware_concurrency() * 2)                    \
+		->Iterations(ITER_COUNT)                                              \
+		->Repetitions(REPEAT_COUNT);                                          \
+	/* gbenchmark main*/                                                      \
+	BENCHMARK_MAIN();
 
 #endif // !LOG_GBENCHMARK_H_
