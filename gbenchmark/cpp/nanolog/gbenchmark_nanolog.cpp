@@ -3,11 +3,10 @@
 #include <thread>
 #include <vector>
 #include <array>
-#include "benchmark/benchmark.h"
 #include "log_msg/log_msg.h"
+#include "gbenchmark/log_gbenchmark.h"
 #include "NanoLogCpp17.h"
 using namespace NanoLog::LogLevels;
-#include "gbenchmark/log_gbenchmark.h"
 
 std::once_flag init_flag;
 

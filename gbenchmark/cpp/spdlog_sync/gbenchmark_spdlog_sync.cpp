@@ -1,11 +1,10 @@
 #include <atomic>
 #include <thread>
 #include <vector>
-#include "benchmark/benchmark.h"
 #include "log_msg/log_msg.h"
+#include "gbenchmark/log_gbenchmark.h"
 #include "spdlog/spdlog.h"
 #include "spdlog/sinks/basic_file_sink.h"
-#include "gbenchmark/log_gbenchmark.h"
 
 std::once_flag init_flag;
 

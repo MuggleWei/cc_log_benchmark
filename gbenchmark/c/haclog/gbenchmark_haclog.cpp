@@ -2,10 +2,9 @@
 #include <thread>
 #include <vector>
 #include <mutex>
-#include "benchmark/benchmark.h"
 #include "log_msg/log_msg.h"
-#include "haclog/haclog.h"
 #include "gbenchmark/log_gbenchmark.h"
+#include "haclog/haclog.h"
 
 std::once_flag init_flag;
 

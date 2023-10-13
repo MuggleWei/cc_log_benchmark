@@ -3,7 +3,6 @@
 #include <thread>
 #include <vector>
 #include <mutex>
-#include "benchmark/benchmark.h"
 #include "log_msg/log_msg.h"
 #include "gbenchmark/log_gbenchmark.h"
 #define QUILL_QUEUE_CAPACITY 4194304

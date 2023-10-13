@@ -1,11 +1,10 @@
-#include "benchmark/benchmark.h"
-#include "easylogging++.h"
-#include "gbenchmark/log_gbenchmark.h"
-#include "log_msg/log_msg.h"
 #include <atomic>
 #include <mutex>
 #include <thread>
 #include <vector>
+#include "log_msg/log_msg.h"
+#include "gbenchmark/log_gbenchmark.h"
+#include "easylogging++.h"
 
 std::once_flag init_flag;
 

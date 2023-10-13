@@ -3,10 +3,10 @@
 #include <thread>
 #include <vector>
 #include <mutex>
-#include "benchmark/benchmark.h"
 #include "log_msg/log_msg.h"
 #include "gbenchmark/log_gbenchmark.h"
-#define FMTLOG_BLOCK 1
+// ifdef FMTLOG_BLOCK=1, benchmark stuck!!!
+// #define FMTLOG_BLOCK 1
 #include "fmtlog.h"
 
 std::once_flag init_flag;
@@ -21,6 +21,8 @@ std::once_flag init_flag;
 
 EXPAND_FUNCS
 
+static std::atomic<int> qfull_times = 0;
+
 class FmtlogFixture : public benchmark::Fixture {
 public:
 	FmtlogFixture()
@@ -32,15 +34,33 @@ public:
 		}
 	}
 
-	void SetUp(const benchmark::State &)
+	void SetUp(const benchmark::State &state)
 	{
 		std::call_once(init_flag, []() {
 			std::filesystem::create_directories("logs");
-			fmtlog::setLogFile("logs/gbenchmark_fmt.log");
+			fmtlog::setLogFile("./logs/benchmark_fmtlog.log");
 			fmtlog::setHeaderPattern("{l}|{YmdHMSF}|{s}|{t} - ");
+			fmtlog::setLogQFullCB(
+				[](void *) {
+					qfull_times.fetch_add(1, std::memory_order_relaxed);
+				},
+				nullptr);
 
 			FMTLOG(fmtlog::INF, "hello");
 		});
+
+		if (state.thread_index() == 0) {
+			qfull_times = 0;
+		}
+	}
+
+	void TearDown(const benchmark::State &state)
+	{
+		if (state.thread_index() == 0) {
+			fprintf(stderr, "QFull times: %d\n",
+					qfull_times.load(std::memory_order_relaxed));
+			qfull_times = 0;
+		}
 	}
 
 public:
