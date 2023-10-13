@@ -37,7 +37,7 @@ static void DoTeardown(const benchmark::State &);
 #endif
 
 #ifndef ITER_COUNT
-	#define ITER_COUNT 10000
+	#define ITER_COUNT 2000
 	#define REPEAT_COUNT 5
 #endif
 #if ITER_COUNT

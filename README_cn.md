@@ -19,5 +19,5 @@
 2. 设定迭代和重复次数 (设置 google benchmark 中的 Iterations + Repetitions), 反映在非压力测试的情况下, 各个日志库的表现如何. 在此场景下测试的线程数量为: 1/${0.5 * CPU数量}/${1 * CPU数量}/${2 * CPU数量}
 
 ## 构建
-直接运行 `build.sh` (Windows 上运行 `build.bat`)进行构建, 构建过程中会自动下载被测的日志库. 接着运行 `run_benchmark.sh` 进行测试并生成报告.  
+直接运行 `build.sh` (Windows 上运行 `build.bat`)进行构建, 构建过程中会自动下载被测的日志库. 接着运行 `run_benchmark.sh` 进行测试并生成报告, 生成的报告将在 `build` 目录下, 名为 `benchmark_*.txt`.  
 注意: 由于部分日志库并不支持所有平台, 所以仅在 Linux 能够测试所有的日志库.  

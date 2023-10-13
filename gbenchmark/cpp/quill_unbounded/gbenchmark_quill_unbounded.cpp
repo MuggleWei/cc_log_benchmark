@@ -4,6 +4,8 @@
 #include <vector>
 #include <mutex>
 #include "log_msg/log_msg.h"
+// unbounded will lead memory increase, can't finish in my laptop
+#define MIN_TIME 0
 #include "gbenchmark/log_gbenchmark.h"
 #define QUILL_QUEUE_CAPACITY 4194304
 #include "quill/Quill.h"
@@ -22,9 +24,9 @@ quill::Logger *logger = nullptr;
 
 EXPAND_FUNCS
 
-class FmtlogFixture : public benchmark::Fixture {
+class QuillUnboundedFixture : public benchmark::Fixture {
 public:
-	FmtlogFixture()
+	QuillUnboundedFixture()
 	{
 		if (!LoadLogMsg(log_msgs)) {
 			fprintf(stderr,
@@ -47,7 +49,7 @@ public:
 
 			logger = quill::create_logger(
 				"file_logger",
-				quill::file_handler("logs/gbenchmark_quill.log", []() {
+				quill::file_handler("logs/gbenchmark_quill_unbounded.log", []() {
 					quill::FileHandlerConfig cfg;
 					cfg.set_open_mode('w');
 					cfg.set_pattern("[%(level_name)]|"
@@ -69,4 +71,4 @@ public:
 };
 
 // min time
-RUN_GBENCHMARK(FmtlogFixture, write)
+RUN_GBENCHMARK(QuillUnboundedFixture, write)
