@@ -4,7 +4,7 @@
 #include <vector>
 #include <mutex>
 #include "log_msg/log_msg.h"
-#define CUSTOM_TEARDOWN
+// #define CUSTOM_TEARDOWN
 #include "gbenchmark/log_gbenchmark.h"
 #include "fmtlog.h"
 
@@ -20,7 +20,7 @@ std::once_flag init_flag;
 
 EXPAND_FUNCS
 
-static std::atomic<int> qfull_times = 0;
+static thread_local uint32_t qfull_times = 0;
 
 class FmtlogFixture : public benchmark::Fixture {
 public:
@@ -39,27 +39,24 @@ public:
 			std::filesystem::create_directories("logs");
 			fmtlog::setLogFile("./logs/gbenchmark_fmtlog.log", true);
 			fmtlog::setHeaderPattern("{l}|{YmdHMSF}|{s}|{t} - ");
-			fmtlog::setLogQFullCB(
-				[](void *) {
-					qfull_times.fetch_add(1, std::memory_order_relaxed);
-				},
-				nullptr);
+			fmtlog::setLogQFullCB([](void *) { qfull_times += 1; }, nullptr);
 
 			FMTLOG(fmtlog::INF, "hello");
 		});
 	}
 
+	void TearDown(const benchmark::State &state)
+	{
+		if (qfull_times > 0) {
+			fprintf(stderr, "state: %s, QFull times: %u\n",
+					state.name().c_str(), qfull_times);
+			qfull_times = 0;
+		}
+	}
+
 public:
 	std::vector<LogMsg> log_msgs;
 };
-
-static void DoTeardown(const benchmark::State &state)
-{
-	fprintf(stderr,
-			"state: %s, QFull times: %d\n",
-			state.name().c_str(), qfull_times.load(std::memory_order_relaxed));
-	qfull_times = 0;
-}
 
 // min time
 RUN_GBENCHMARK(FmtlogFixture, write)

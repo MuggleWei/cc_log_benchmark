@@ -1,0 +1,87 @@
+2023-10-14T02:02:20+08:00
+Running ./bin/gbenchmark_quill_bounded
+Run on (12 X 2800.8 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x6)
+  L1 Instruction 32 KiB (x6)
+  L2 Unified 256 KiB (x6)
+  L3 Unified 12288 KiB (x1)
+Load Average: 1.95, 0.81, 0.35
+----------------------------------------------------------------------------------------------------------------
+Benchmark                                                                      Time             CPU   Iterations
+----------------------------------------------------------------------------------------------------------------
+QuillBoundedFixture/write/min_time:3.000/threads:1                          56.5 ns         56.5 ns     73356403
+QuillBoundedFixture/write/min_time:3.000/threads:2                          33.3 ns         66.5 ns     66580818
+QuillBoundedFixture/write/min_time:3.000/threads:4                          20.2 ns         80.9 ns     51100396
+QuillBoundedFixture/write/min_time:3.000/threads:8                          13.0 ns          103 ns     37495376
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:1                113 ns          113 ns         2000
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:1                111 ns          111 ns         2000
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:1                111 ns          111 ns         2000
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:1                107 ns          108 ns         2000
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:1                111 ns          111 ns         2000
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:1_mean           110 ns          111 ns            5
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:1_median         111 ns          111 ns            5
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:1_stddev        1.94 ns         1.88 ns            5
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:1_cv            1.75 %          1.70 %             5
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:6               1167 ns         6963 ns        12000
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:6                998 ns         5843 ns        12000
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:6                922 ns         5139 ns        12000
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:6                865 ns         5139 ns        12000
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:6               1071 ns         6403 ns        12000
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:6_mean          1005 ns         5898 ns            5
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:6_median         998 ns         5843 ns            5
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:6_stddev         120 ns          797 ns            5
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:6_cv           11.92 %         13.52 %             5
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:12              1265 ns        12922 ns        24000
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:12              1113 ns        11842 ns        24000
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:12              1110 ns        12042 ns        24000
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:12              1165 ns        12459 ns        24000
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:12              1176 ns        12862 ns        24000
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:12_mean         1166 ns        12426 ns            5
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:12_median       1165 ns        12459 ns            5
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:12_stddev       63.0 ns          481 ns            5
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:12_cv           5.41 %          3.87 %             5
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:24              1091 ns        13593 ns        48000
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:24              1165 ns        14647 ns        48000
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:24              1148 ns        15445 ns        48000
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:24              1200 ns        14721 ns        48000
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:24              1165 ns        14618 ns        48000
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:24_mean         1154 ns        14605 ns            5
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:24_median       1165 ns        14647 ns            5
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:24_stddev       39.8 ns          660 ns            5
+QuillBoundedFixture/write/iterations:2000/repeats:5/threads:24_cv           3.45 %          4.52 %             5
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 141245288 log messages from thread 3903
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 54410 log messages from thread 3911
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 954410 log messages from thread 3912
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 9726460 log messages from thread 3913
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 32241839 log messages from thread 3914
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 54410 log messages from thread 3931
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 54410 log messages from thread 3930
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 54410 log messages from thread 3932
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 954410 log messages from thread 3934
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 954410 log messages from thread 3935
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 954410 log messages from thread 3933
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 12638329 log messages from thread 3938
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 12638329 log messages from thread 3937
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 12638329 log messages from thread 3936
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 54410 log messages from thread 3980
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 54410 log messages from thread 3977
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 54410 log messages from thread 3975
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 54410 log messages from thread 3976
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 54410 log messages from thread 3979
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 54410 log messages from thread 3974
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 54410 log messages from thread 3978
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 954410 log messages from thread 3986
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 954410 log messages from thread 3987
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 954410 log messages from thread 3981
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 954410 log messages from thread 3983
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 954410 log messages from thread 3984
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 954410 log messages from thread 3982
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 954410 log messages from thread 3985
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 4641332 log messages from thread 3989
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 4641332 log messages from thread 3992
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 4641332 log messages from thread 3991
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 4641332 log messages from thread 3993
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 4641332 log messages from thread 3994
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 4641332 log messages from thread 3990
+02:02:35 Quill INFO: BoundedNonBlocking queue dropped 4641332 log messages from thread 3988

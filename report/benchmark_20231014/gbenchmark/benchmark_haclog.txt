@@ -1,0 +1,52 @@
+2023-10-14T02:01:32+08:00
+Running ./bin/gbenchmark_haclog
+Run on (12 X 2199.21 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x6)
+  L1 Instruction 32 KiB (x6)
+  L2 Unified 256 KiB (x6)
+  L3 Unified 12288 KiB (x1)
+Load Average: 1.19, 0.51, 0.23
+----------------------------------------------------------------------------------------------------------
+Benchmark                                                                Time             CPU   Iterations
+----------------------------------------------------------------------------------------------------------
+HaclogFixture/write/min_time:3.000/threads:1                           113 ns          112 ns     34465736
+HaclogFixture/write/min_time:3.000/threads:2                          72.4 ns          145 ns     28324390
+HaclogFixture/write/min_time:3.000/threads:4                          78.0 ns          312 ns     10111916
+HaclogFixture/write/min_time:3.000/threads:8                          1583 ns        12649 ns       800000
+HaclogFixture/write/iterations:2000/repeats:5/threads:1                183 ns          183 ns         2000
+HaclogFixture/write/iterations:2000/repeats:5/threads:1                177 ns          177 ns         2000
+HaclogFixture/write/iterations:2000/repeats:5/threads:1                181 ns          181 ns         2000
+HaclogFixture/write/iterations:2000/repeats:5/threads:1                171 ns          171 ns         2000
+HaclogFixture/write/iterations:2000/repeats:5/threads:1                172 ns          172 ns         2000
+HaclogFixture/write/iterations:2000/repeats:5/threads:1_mean           177 ns          177 ns            5
+HaclogFixture/write/iterations:2000/repeats:5/threads:1_median         177 ns          177 ns            5
+HaclogFixture/write/iterations:2000/repeats:5/threads:1_stddev        5.62 ns         5.54 ns            5
+HaclogFixture/write/iterations:2000/repeats:5/threads:1_cv            3.18 %          3.14 %             5
+HaclogFixture/write/iterations:2000/repeats:5/threads:6               35.1 ns          211 ns        12000
+HaclogFixture/write/iterations:2000/repeats:5/threads:6               39.0 ns          234 ns        12000
+HaclogFixture/write/iterations:2000/repeats:5/threads:6               29.9 ns          179 ns        12000
+HaclogFixture/write/iterations:2000/repeats:5/threads:6               28.2 ns          169 ns        12000
+HaclogFixture/write/iterations:2000/repeats:5/threads:6               27.8 ns          163 ns        12000
+HaclogFixture/write/iterations:2000/repeats:5/threads:6_mean          32.0 ns          191 ns            5
+HaclogFixture/write/iterations:2000/repeats:5/threads:6_median        29.9 ns          179 ns            5
+HaclogFixture/write/iterations:2000/repeats:5/threads:6_stddev        4.88 ns         30.0 ns            5
+HaclogFixture/write/iterations:2000/repeats:5/threads:6_cv           15.26 %         15.70 %             5
+HaclogFixture/write/iterations:2000/repeats:5/threads:12              29.1 ns          324 ns        24000
+HaclogFixture/write/iterations:2000/repeats:5/threads:12              36.4 ns          401 ns        24000
+HaclogFixture/write/iterations:2000/repeats:5/threads:12              30.9 ns          370 ns        24000
+HaclogFixture/write/iterations:2000/repeats:5/threads:12              33.4 ns          399 ns        24000
+HaclogFixture/write/iterations:2000/repeats:5/threads:12              28.3 ns          337 ns        24000
+HaclogFixture/write/iterations:2000/repeats:5/threads:12_mean         31.6 ns          367 ns            5
+HaclogFixture/write/iterations:2000/repeats:5/threads:12_median       30.9 ns          370 ns            5
+HaclogFixture/write/iterations:2000/repeats:5/threads:12_stddev       3.32 ns         35.1 ns            5
+HaclogFixture/write/iterations:2000/repeats:5/threads:12_cv          10.48 %          9.57 %             5
+HaclogFixture/write/iterations:2000/repeats:5/threads:24              16.7 ns          399 ns        48000
+HaclogFixture/write/iterations:2000/repeats:5/threads:24              18.4 ns          419 ns        48000
+HaclogFixture/write/iterations:2000/repeats:5/threads:24              15.5 ns          372 ns        48000
+HaclogFixture/write/iterations:2000/repeats:5/threads:24              16.8 ns          382 ns        48000
+HaclogFixture/write/iterations:2000/repeats:5/threads:24              15.3 ns          356 ns        48000
+HaclogFixture/write/iterations:2000/repeats:5/threads:24_mean         16.6 ns          385 ns            5
+HaclogFixture/write/iterations:2000/repeats:5/threads:24_median       16.7 ns          382 ns            5
+HaclogFixture/write/iterations:2000/repeats:5/threads:24_stddev       1.23 ns         24.4 ns            5
+HaclogFixture/write/iterations:2000/repeats:5/threads:24_cv           7.44 %          6.32 %             5
