@@ -37,7 +37,7 @@ public:
 	{
 		std::call_once(init_flag, []() {
 			std::filesystem::create_directories("logs");
-			fmtlog::setLogFile("./logs/benchmark_fmtlog.log");
+			fmtlog::setLogFile("./logs/gbenchmark_fmtlog.log", true);
 			fmtlog::setHeaderPattern("{l}|{YmdHMSF}|{s}|{t} - ");
 			fmtlog::setLogQFullCB(
 				[](void *) {
