@@ -23,7 +23,7 @@
 注意: 由于部分日志库并不支持所有平台, 所以仅在 Linux 能够测试所有的日志库.  
 
 ## 测试
-测试日期: 2023-10-13  
+测试日期: 2023-10-14  
 被测库版本, 详见: [CMakeLists.txt](./CMakeLists.txt)  
 单次写入数据: 
 ```
@@ -53,13 +53,13 @@ ldd: (GNU libc) 2.38
 * reckless 在 **场景1** 中会卡住, 所以 reckless 跳过 **场景1** 的测试
 
 ## 测试结果
-在 [gbenchmark](./report/benchmark_20231013/gbenchmar) 目录中, 可以找到我本地机器的基准测试报告的详细信息, 图表化表示如下:   
+在 [gbenchmark](./report/benchmark_20231014/gbenchmar) 目录中, 可以找到我本地机器的基准测试报告的详细信息, 图表化表示如下:   
 
 **场景1**: 设定最小的测试时间 (x轴: 日志库+线程数, y轴: 写入耗时)
-<img src="./report/benchmark_20231013/img/min_time.svg" />
+<img src="./report/benchmark_20231014/img/min_time.svg" />
 
 **场景2**: 设定迭代和重复次数 设定最小的测试时间 (x轴: 日志库+线程数, y轴: 写入耗时的中位数)
-<img src="./report/benchmark_20231013/img/iter_repeat.svg" />
+<img src="./report/benchmark_20231014/img/iter_repeat.svg" />
 
 ## 结果分析
 通过上述图表不难看出  
@@ -79,7 +79,7 @@ haclog 与 Nanolog 选择了方案 1, fmtlog 可选方案 1/2, quill 可选方�
 
 ### fmtlog
 优点
-* 在两种场景下都表现出良好的速度, 其中在 **场景1** 中速度仅仅略逊与 benchmark_quill_bounded
+* 在两种场景下都表现出良好的速度, 其中在 **场景1** 中速度与 benchmark_quill_bounded 旗鼓相当, 并列最快速度
 * 在两种场景下, 速度表现的稳定性足够好, 波动较小
 * 采用了 format 格式化风格
 
@@ -107,7 +107,7 @@ haclog 与 Nanolog 选择了方案 1, fmtlog 可选方案 1/2, quill 可选方�
 
 ### quill
 优点
-* 在 **场景1** 中速度最优
+* 在 **场景1** 中速度与 fmtlog 旗鼓相当, 并列最快速度
 * 采用了 format 格式化风格
 
 缺点
