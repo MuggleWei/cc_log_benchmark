@@ -25,6 +25,7 @@
 	BENCHMARK_REGISTER_F(fixture, name)->Threads(1)->MinTime(MIN_TIME);       \
 	BENCHMARK_REGISTER_F(fixture, name)->Threads(2)->MinTime(MIN_TIME);       \
 	BENCHMARK_REGISTER_F(fixture, name)->Threads(4)->MinTime(MIN_TIME);       \
+	BENCHMARK_REGISTER_F(fixture, name)->Threads(8)->MinTime(MIN_TIME);       \
 	/* iteration * repeat */                                                  \
 	BENCHMARK_REGISTER_F(fixture, name)                                       \
 		->Threads(1)                                                          \

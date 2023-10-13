@@ -69,6 +69,8 @@ set(benchmark_glog ON CACHE BOOL "generate benchmark: glog")
 
 set(benchmark_haclog ON CACHE BOOL "generate benchmark: haclog")
 
+set(benchmark_loguru ON CACHE BOOL "generate benchmark: loguru")
+
 if (UNIX)
 	if (${CMAKE_SYSTEM_PROCESSOR} MATCHES "arm")
 		set(benchmark_nanolog OFF CACHE BOOL "generate benchmark: nanolog")
@@ -124,15 +126,15 @@ FetchContent_Declare(
 	GIT_PROGRESS TRUE)
 FetchContent_MakeAvailable(benchmark)
 
-message("# fetch mugglec")
-SET(MUGGLE_BUILD_BENCHMARK_UTILS ON CACHE BOOL "")
-FetchContent_Declare(
-	mugglec
-	GIT_REPOSITORY https://github.com/MuggleWei/mugglec.git
-	GIT_TAG v1.3.4
-	GIT_SHALLOW TRUE
-	GIT_PROGRESS TRUE)
-FetchContent_MakeAvailable(mugglec)
+#message("# fetch mugglec")
+#SET(MUGGLE_BUILD_BENCHMARK_UTILS ON CACHE BOOL "")
+#FetchContent_Declare(
+#    mugglec
+#    GIT_REPOSITORY https://github.com/MuggleWei/mugglec.git
+#    GIT_TAG v1.3.4
+#    GIT_SHALLOW TRUE
+#    GIT_PROGRESS TRUE)
+#FetchContent_MakeAvailable(mugglec)
 
 find_package(Threads)
 
@@ -221,6 +223,18 @@ if (benchmark_haclog)
 		GIT_PROGRESS TRUE
 		)
 	FetchContent_MakeAvailable(haclog)
+endif()
+
+if (benchmark_loguru)
+	message("# fetch loguru")
+	FetchContent_Declare(
+		loguru
+		GIT_REPOSITORY https://github.com/emilk/loguru.git
+		GIT_TAG "v2.1.0"
+		GIT_SHALLOW TRUE
+		GIT_PROGRESS TRUE
+		)
+	FetchContent_Populate(loguru)
 endif()
 
 if (benchmark_glog)
@@ -325,6 +339,11 @@ if (benchmark_haclog)
 	target_link_libraries(gbenchmark_haclog haclog)
 endif()
 
+if (benchmark_loguru)
+	add_gbench(loguru ${gbenchmark_dir}/cpp/loguru)
+	target_include_directories(gbenchmark_loguru PUBLIC ${FETCHCONTENT_BASE_DIR}/loguru-src)
+endif()
+
 if (benchmark_nanolog)
 	add_gbench(nanolog ${gbenchmark_dir}/cpp/nanolog)
 	add_dependencies(gbenchmark_nanolog nanolog_lib)
@@ -357,6 +376,7 @@ message("# benchmark easyloggingpp: ${benchmark_easyloggingpp}")
 message("# benchmark fmtlog: ${benchmark_fmtlog}")
 message("# benchmark glog: ${benchmark_glog}")
 message("# benchmark haclog: ${benchmark_haclog}")
+message("# benchmark loguru: ${benchmark_loguru}")
 message("# benchmark nanolog: ${benchmark_nanolog}")
 message("# benchmark reckless: ${benchmark_reckless}")
 message("# benchmark spdlog: ${benchmark_spdlog}")
