@@ -53,7 +53,7 @@ ldd: (GNU libc) 2.38
 * reckless 在 **场景1** 中会卡住, 所以 reckless 跳过 **场景1** 的测试
 
 ## 测试结果
-在 [gbenchmark](./report/benchmark_20231014/gbenchmar) 目录中, 可以找到我本地机器的基准测试报告的详细信息, 图表化表示如下:   
+在 [gbenchmark](./report/benchmark_20231014/gbenchmark) 目录中, 可以找到我本地机器的基准测试报告的详细信息, 图表化表示如下:   
 
 **场景1**: 设定最小的测试时间 (x轴: 日志库+线程数, y轴: 写入耗时)
 <img src="./report/benchmark_20231014/img/min_time.svg" />
