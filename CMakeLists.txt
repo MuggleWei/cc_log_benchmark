@@ -57,7 +57,7 @@ set(FETCHCONTENT_BASE_DIR ${CMAKE_BINARY_DIR}/_deps)
 # options
 ################################
 
-set(benchmark_easyloggingpp ON CACHE BOOL "generate benchmark: easyloggingpp")
+set(benchmark_easyloggingpp OFF CACHE BOOL "generate benchmark: easyloggingpp")
 
 if (APPLE)
 	set(benchmark_fmtlog OFF CACHE BOOL "generate benchmark: fmtlog")
@@ -80,6 +80,8 @@ if (UNIX)
 else()
 	set(benchmark_nanolog OFF CACHE BOOL "generate benchmark: nanolog")
 endif()
+
+set(benchmark_quill ON CACHE BOOL "generate benchmark: quill")
 
 if (APPLE OR WIN32)
 	set(benchmark_reckless OFF CACHE BOOL "generate benchmark: reckless")
@@ -280,6 +282,18 @@ if (benchmark_nanolog)
 		)
 endif()
 
+if (benchmark_quill)
+	message("# fetch quill")
+	FetchContent_Declare(
+		quill
+		GIT_REPOSITORY https://github.com/odygrd/quill.git
+		GIT_TAG v3.3.1
+		GIT_SHALLOW TRUE
+		GIT_PROGRESS TRUE
+		)
+	FetchContent_MakeAvailable(quill)
+endif()
+
 if (benchmark_reckless)
 	message("# fetch reckless")
 	FetchContent_Declare(
@@ -349,6 +363,13 @@ if (benchmark_nanolog)
 	add_dependencies(gbenchmark_nanolog nanolog_lib)
 	target_link_libraries(gbenchmark_nanolog nanolog_lib)
 	target_include_directories(gbenchmark_nanolog PUBLIC ${FETCHCONTENT_BASE_DIR}/nanolog-src/runtime)
+endif()
+
+if (benchmark_quill)
+	add_gbench(quill ${gbenchmark_dir}/cpp/quill)
+	add_dependencies(gbenchmark_quill quill)
+	target_link_libraries(gbenchmark_quill quill)
+	target_compile_definitions(gbenchmark_quill PUBLIC QUILL_USE_BOUNDED_QUEUE)
 endif()
 
 if (benchmark_reckless)

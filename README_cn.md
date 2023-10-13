@@ -6,5 +6,6 @@
 * [haclog](https://github.com/MuggleWei/haclog): Haclog(Happy Aync C log) is an extremely fast plain C logging library
 * [loguru](https://github.com/emilk/loguru): A lightweight C++ logging library
 * [nanolog](https://github.com/PlatformLab/NanoLog): Nanolog is an extremely performant nanosecond scale logging system for C++ that exposes a simple printf-like API. 
+* [quill](https://github.com/odygrd/quill): Asynchronous Low Latency C++ Logging Library
 * [reckless](https://github.com/mattiasflodin/reckless/tree/master): Reckless logging. Low-latency, high-throughput, asynchronous logging library for C++.
 * [spdlog](https://github.com/gabime/spdlog): Fast C++ logging library
