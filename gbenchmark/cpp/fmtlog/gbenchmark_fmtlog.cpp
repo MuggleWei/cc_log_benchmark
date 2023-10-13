@@ -6,6 +6,7 @@
 #include "benchmark/benchmark.h"
 #include "log_msg/log_msg.h"
 #include "gbenchmark/log_gbenchmark.h"
+#define FMTLOG_BLOCK 1
 #include "fmtlog.h"
 
 std::once_flag init_flag;
@@ -37,6 +38,8 @@ public:
 			std::filesystem::create_directories("logs");
 			fmtlog::setLogFile("logs/gbenchmark_fmt.log");
 			fmtlog::setHeaderPattern("{l}|{YmdHMSF}|{s}|{t} - ");
+
+			FMTLOG(fmtlog::INF, "hello");
 		});
 	}
 
