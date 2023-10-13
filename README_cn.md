@@ -24,7 +24,17 @@
 
 ## 测试
 测试日期: 2023-10-13  
-被测库版本, 详见: [CMakeLists.txt](./CMakeLists.txt)
+被测库版本, 详见: [CMakeLists.txt](./CMakeLists.txt)  
+单次写入数据: 
+```
+struct LogMsg {
+	uint64_t u64;
+	uint32_t u32;
+	int64_t i64;
+	int32_t i32;
+	char s[128];
+};
+```
 
 ### 测试机器
 机器: 20R10002CD ThinkPad X1 Carbon 7th  
@@ -45,10 +55,10 @@ ldd: (GNU libc) 2.38
 ## 测试结果
 在 [gbenchmark](./report/benchmark_20231013/gbenchmar) 目录中, 可以找到我本地机器的基准测试报告的详细信息, 图表化表示如下:   
 
-**场景1**: 设定最小的测试时间
+**场景1**: 设定最小的测试时间 (x轴: 日志库+线程数, y轴: 写入耗时)
 <img src="./report/benchmark_20231013/img/min_time.svg" />
 
-**场景2**: 设定迭代和重复次数
+**场景2**: 设定迭代和重复次数 设定最小的测试时间 (x轴: 日志库+线程数, y轴: 写入耗时的中位数)
 <img src="./report/benchmark_20231013/img/iter_repeat.svg" />
 
 ## 结果分析
