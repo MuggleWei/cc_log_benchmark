@@ -1,0 +1,52 @@
+2023-10-13T18:22:23+08:00
+Running ./bin/gbenchmark_spdlog_async
+Run on (12 X 2200.16 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x6)
+  L1 Instruction 32 KiB (x6)
+  L2 Unified 256 KiB (x6)
+  L3 Unified 12288 KiB (x1)
+Load Average: 2.53, 1.09, 0.56
+---------------------------------------------------------------------------------------------------------------
+Benchmark                                                                     Time             CPU   Iterations
+---------------------------------------------------------------------------------------------------------------
+SpdlogAsyncFixture/async/min_time:3.000/threads:1                           847 ns          798 ns      5121136
+SpdlogAsyncFixture/async/min_time:3.000/threads:2                          1522 ns         2032 ns      2289314
+SpdlogAsyncFixture/async/min_time:3.000/threads:4                          2538 ns         4985 ns       855472
+SpdlogAsyncFixture/async/min_time:3.000/threads:8                          3802 ns         8906 ns       585408
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:1               1200 ns         1113 ns         2000
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:1               1216 ns         1155 ns         2000
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:1               1216 ns         1158 ns         2000
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:1               1215 ns         1143 ns         2000
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:1               1238 ns         1178 ns         2000
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:1_mean          1217 ns         1149 ns            5
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:1_median        1216 ns         1155 ns            5
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:1_stddev        13.7 ns         23.7 ns            5
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:1_cv            1.12 %          2.07 %             5
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:6               3689 ns         7410 ns        12000
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:6               3506 ns         6787 ns        12000
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:6               3765 ns         6791 ns        12000
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:6               2982 ns         6882 ns        12000
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:6               3017 ns         6830 ns        12000
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:6_mean          3392 ns         6940 ns            5
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:6_median        3506 ns         6830 ns            5
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:6_stddev         370 ns          265 ns            5
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:6_cv           10.92 %          3.82 %             5
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:12              3543 ns         8814 ns        24000
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:12              3448 ns         8718 ns        24000
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:12              3542 ns         8912 ns        24000
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:12              3761 ns         9396 ns        24000
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:12              3735 ns         9341 ns        24000
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:12_mean         3606 ns         9036 ns            5
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:12_median       3543 ns         8912 ns            5
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:12_stddev        136 ns          312 ns            5
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:12_cv           3.76 %          3.45 %             5
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:24              3551 ns         9968 ns        48000
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:24              3594 ns        10149 ns        48000
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:24              3779 ns        10593 ns        48000
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:24              3778 ns        10621 ns        48000
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:24              3817 ns        10679 ns        48000
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:24_mean         3704 ns        10402 ns            5
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:24_median       3778 ns        10593 ns            5
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:24_stddev        122 ns          322 ns            5
+SpdlogAsyncFixture/async/iterations:2000/repeats:5/threads:24_cv           3.30 %          3.09 %             5
