@@ -19,5 +19,5 @@ Use google benchmark for testing. The test is divided into two scenario
 2. Determine the number of iterations and repetitions (set Iterations + Repetitions in google benchmark) to reflect the performance of each log library under non-stress testing. The number of threads tested in this scenario is: 1/${0.5 * num_of_CPU}/${1 * num_of_CPU}/${2 * num_of_CPU}
 
 ## Build
-Run `build.sh` (`build.bat` in Windows) to build, The log library under test will be automatically downloaded during the build process.  
+Run `build.sh` (`build.bat` in Windows) to build, The log library under test will be automatically downloaded during the build process. Then run the program starting with `gbenchmark_` in the `bin` directory to test.  
 Note: Since some log libraries do not support all platforms, Only linux can guarantee all log libraries be tested.  
