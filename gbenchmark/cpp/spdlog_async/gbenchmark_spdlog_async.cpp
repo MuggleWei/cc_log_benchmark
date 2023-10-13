@@ -38,7 +38,7 @@ public:
 				spdlog::init_thread_pool(8 * 1024, 1);
 
 				auto logger = spdlog::basic_logger_mt<spdlog::async_factory>(
-					"root", "logs/gbenchmark_spdlog_async.log");
+					"root", "logs/gbenchmark_spdlog_async.log", true);
 				logger->set_level(spdlog::level::debug);
 				logger->set_pattern("%l|%E.%F|%s|%!|%t - %v");
 
