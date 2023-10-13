@@ -339,6 +339,14 @@ if (benchmark_fmtlog)
 		${FETCHCONTENT_BASE_DIR}/fmtlog-src/
 		${FETCHCONTENT_BASE_DIR}/fmtlog-src/fmt/include
 		)
+
+	add_gbench(fmtlog_block ${gbenchmark_dir}/cpp/fmtlog_block)
+	add_dependencies(gbenchmark_fmtlog_block fmtlog-static fmt)
+	target_link_libraries(gbenchmark_fmtlog_block fmtlog-static fmt)
+	target_include_directories(gbenchmark_fmtlog_block PUBLIC
+		${FETCHCONTENT_BASE_DIR}/fmtlog-src/
+		${FETCHCONTENT_BASE_DIR}/fmtlog-src/fmt/include
+		)
 endif()
 
 if (benchmark_glog)

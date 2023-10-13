@@ -4,8 +4,10 @@
 #include <vector>
 #include <mutex>
 #include "log_msg/log_msg.h"
+// FMTLOG_BLOCK=1, stuck!!!
 #define CUSTOM_TEARDOWN
 #include "gbenchmark/log_gbenchmark.h"
+#define FMTLOG_BLOCK 1
 #include "fmtlog.h"
 
 std::once_flag init_flag;
@@ -22,9 +24,9 @@ EXPAND_FUNCS
 
 static std::atomic<int> qfull_times = 0;
 
-class FmtlogFixture : public benchmark::Fixture {
+class FmtlogBlockFixture : public benchmark::Fixture {
 public:
-	FmtlogFixture()
+	FmtlogBlockFixture()
 	{
 		if (!LoadLogMsg(log_msgs)) {
 			fprintf(stderr,
@@ -37,7 +39,7 @@ public:
 	{
 		std::call_once(init_flag, []() {
 			std::filesystem::create_directories("logs");
-			fmtlog::setLogFile("./logs/benchmark_fmtlog.log");
+			fmtlog::setLogFile("./logs/benchmark_fmtlog_block.log");
 			fmtlog::setHeaderPattern("{l}|{YmdHMSF}|{s}|{t} - ");
 			fmtlog::setLogQFullCB(
 				[](void *) {
@@ -62,4 +64,4 @@ static void DoTeardown(const benchmark::State &state)
 }
 
 // min time
-RUN_GBENCHMARK(FmtlogFixture, write)
+RUN_GBENCHMARK(FmtlogBlockFixture, write)
