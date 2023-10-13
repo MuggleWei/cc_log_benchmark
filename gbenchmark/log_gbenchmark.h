@@ -3,15 +3,35 @@
 
 #include "benchmark/benchmark.h"
 
+#ifndef CUSTOM_TEARDOWN
+static void DoTeardown(const benchmark::State &)
+{
+}
+#else
+static void DoTeardown(const benchmark::State &);
+#endif
+
 #ifndef MIN_TIME
 	#define MIN_TIME 3
 #endif
 #if MIN_TIME
-	#define RUN_GBENCHMARK_MIN_TIME(fixture, name)                          \
-		BENCHMARK_REGISTER_F(fixture, name)->Threads(1)->MinTime(MIN_TIME); \
-		BENCHMARK_REGISTER_F(fixture, name)->Threads(2)->MinTime(MIN_TIME); \
-		BENCHMARK_REGISTER_F(fixture, name)->Threads(4)->MinTime(MIN_TIME); \
-		BENCHMARK_REGISTER_F(fixture, name)->Threads(8)->MinTime(MIN_TIME);
+	#define RUN_GBENCHMARK_MIN_TIME(fixture, name) \
+		BENCHMARK_REGISTER_F(fixture, name)        \
+			->Threads(1)                           \
+			->MinTime(MIN_TIME)                    \
+			->Teardown(DoTeardown);                \
+		BENCHMARK_REGISTER_F(fixture, name)        \
+			->Threads(2)                           \
+			->MinTime(MIN_TIME)                    \
+			->Teardown(DoTeardown);                \
+		BENCHMARK_REGISTER_F(fixture, name)        \
+			->Threads(4)                           \
+			->MinTime(MIN_TIME)                    \
+			->Teardown(DoTeardown);                \
+		BENCHMARK_REGISTER_F(fixture, name)        \
+			->Threads(8)                           \
+			->MinTime(MIN_TIME)                    \
+			->Teardown(DoTeardown);
 #else
 	#define RUN_GBENCHMARK_MIN_TIME(fixture, name)
 #endif
@@ -25,21 +45,25 @@
 		BENCHMARK_REGISTER_F(fixture, name)                           \
 			->Threads(1)                                              \
 			->Iterations(ITER_COUNT)                                  \
-			->Repetitions(REPEAT_COUNT);                              \
+			->Repetitions(REPEAT_COUNT)                               \
+			->Teardown(DoTeardown);                                   \
 		BENCHMARK_REGISTER_F(fixture, name)                           \
 			->Threads((std::thread::hardware_concurrency() / 2) > 0 ? \
 						  (std::thread::hardware_concurrency() / 2) : \
 						  1)                                          \
 			->Iterations(ITER_COUNT)                                  \
-			->Repetitions(REPEAT_COUNT);                              \
+			->Repetitions(REPEAT_COUNT)                               \
+			->Teardown(DoTeardown);                                   \
 		BENCHMARK_REGISTER_F(fixture, name)                           \
 			->Threads(std::thread::hardware_concurrency())            \
 			->Iterations(ITER_COUNT)                                  \
-			->Repetitions(REPEAT_COUNT);                              \
+			->Repetitions(REPEAT_COUNT)                               \
+			->Teardown(DoTeardown);                                   \
 		BENCHMARK_REGISTER_F(fixture, name)                           \
 			->Threads(std::thread::hardware_concurrency() * 2)        \
 			->Iterations(ITER_COUNT)                                  \
-			->Repetitions(REPEAT_COUNT);
+			->Repetitions(REPEAT_COUNT)                               \
+			->Teardown(DoTeardown);
 #else
 	#define RUN_GBENCHMARK_ITER_REPEAT(fixture, name)
 #endif

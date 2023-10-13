@@ -4,6 +4,7 @@
 #include <vector>
 #include <mutex>
 #include "log_msg/log_msg.h"
+#define CUSTOM_TEARDOWN
 #include "gbenchmark/log_gbenchmark.h"
 // ifdef FMTLOG_BLOCK=1, benchmark stuck!!!
 // #define FMTLOG_BLOCK 1
@@ -34,7 +35,7 @@ public:
 		}
 	}
 
-	void SetUp(const benchmark::State &state)
+	void SetUp(const benchmark::State &)
 	{
 		std::call_once(init_flag, []() {
 			std::filesystem::create_directories("logs");
@@ -48,24 +49,19 @@ public:
 
 			FMTLOG(fmtlog::INF, "hello");
 		});
-
-		if (state.thread_index() == 0) {
-			qfull_times = 0;
-		}
-	}
-
-	void TearDown(const benchmark::State &state)
-	{
-		if (state.thread_index() == 0) {
-			fprintf(stderr, "QFull times: %d\n",
-					qfull_times.load(std::memory_order_relaxed));
-			qfull_times = 0;
-		}
 	}
 
 public:
 	std::vector<LogMsg> log_msgs;
 };
+
+static void DoTeardown(const benchmark::State &state)
+{
+	fprintf(stderr,
+			"state: %s, QFull times: %d\n",
+			state.name().c_str(), qfull_times.load(std::memory_order_relaxed));
+	qfull_times = 0;
+}
 
 // min time
 RUN_GBENCHMARK(FmtlogFixture, write)
