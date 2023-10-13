@@ -1,3 +1,6 @@
+* [readme EN](./README.md)
+* [readme 中文](./README_cn.md)
+
 ## Overview
 The repo benchmark several C/C++ log library. The tested libraries list below(Sort alphabetically)  
 * [easyloggingpp](https://github.com/abumq/easyloggingpp): C++ logging library. It is extremely powerful, extendable, light-weight, fast performing, thread and type safe and consists of many built-in features. It provides ability to write logs in your own customized format. It also provide support for logging your classes, third-party libraries, STL and third-party containers etc.

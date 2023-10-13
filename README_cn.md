@@ -1,3 +1,6 @@
+* [readme EN](./README.md)
+* [readme 中文](./README_cn.md)
+
 ## 概述
 此库对几个 C/C++ 日志库做 benchmark, 被测的库如下所示(按字母顺序排序)  
 * [easyloggingpp](https://github.com/abumq/easyloggingpp): C++ logging library. It is extremely powerful, extendable, light-weight, fast performing, thread and type safe and consists of many built-in features. It provides ability to write logs in your own customized format. It also provide support for logging your classes, third-party libraries, STL and third-party containers etc.
