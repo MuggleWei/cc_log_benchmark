@@ -51,14 +51,15 @@ ldd: (GNU libc) 2.38
 * 当 fmtlog 加入 `#define FMTLOG_BLOCK 1` 时, 测试进程会被卡死而无法继续, 所以 fmtlog 只测试了缓冲区满选择丢弃日志的模式
 * 当 quill 使用 `UNBOUNDED` 时, 在 **场景1** 中, 会导致内存使用一直增长而失败, 所以在测试 quill_unbounded 的时候, 跳过 **场景1** 的测试
 * reckless 在 **场景1** 中会卡住, 所以 reckless 跳过 **场景1** 的测试
+* fmtlog 和 Nanolog 我并没有找到设置默认缓冲区的接口, 所以都只使用了默认的缓冲区大小
 
 ## 测试结果
-在 [gbenchmark](./report/benchmark_20231014/gbenchmark) 目录中, 可以找到我本地机器的基准测试报告的详细信息, 图表化表示如下:   
+在 [gbenchmark](./report/benchmark_20231014/gbenchmark) 目录中, 可以找到我本地机器的基准测试报告的详细信息, 图表化表示如下:  
 
 **场景1**: 设定最小的测试时间 (x轴: 日志库+线程数, y轴: 写入耗时)
 <img src="./report/benchmark_20231014/img/min_time.svg" />
 
-**场景2**: 设定迭代和重复次数 设定最小的测试时间 (x轴: 日志库+线程数, y轴: 写入耗时的中位数)
+**场景2**: 设定迭代和重复次数 设定最小的测试时间 (x轴: 日志库+线程数, y轴: 写入耗时(5次重复测试的中位数))
 <img src="./report/benchmark_20231014/img/iter_repeat.svg" />
 
 ## 结果分析
