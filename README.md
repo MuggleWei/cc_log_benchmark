@@ -116,6 +116,7 @@ advantage
 
 disadvantages
 * The log cannot be read directly and needs to be decoded using the `decompressor` program
+* Only support Linux
 
 ### quill
 advantage

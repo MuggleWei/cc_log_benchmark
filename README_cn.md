@@ -118,6 +118,7 @@ haclog 与 Nanolog 选择了方案 1, fmtlog 可选方案 1/2, quill 可选方�
 
 缺点
 * 日志无法直接阅读, 需要使用附带的 decompressor 程序进行解码
+* 仅支持 Linux
 
 ### quill
 优点
