@@ -37,8 +37,8 @@ static void DoTeardown(const benchmark::State &);
 #endif
 
 #ifndef ITER_COUNT
-	#define ITER_COUNT 2000
-	#define REPEAT_COUNT 5
+	#define ITER_COUNT 200
+	#define REPEAT_COUNT 50
 #endif
 #if ITER_COUNT
 	#define RUN_GBENCHMARK_ITER_REPEAT(fixture, name)                 \
