@@ -18,7 +18,7 @@ run_benchmark() {
 	./bin/gbenchmark_$name 2>&1 | tee benchmark_$name.txt
 
 	echo "sleep for a while, wait CPU temperature drops"
-	sleep 10
+	sleep 15
 }
 
 run_benchmark easyloggingpp

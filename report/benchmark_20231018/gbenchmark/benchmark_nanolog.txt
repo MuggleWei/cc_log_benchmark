@@ -1,0 +1,52 @@
+2023-10-18T20:29:58+08:00
+Running ./bin/gbenchmark_nanolog
+Run on (12 X 3200.34 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x6)
+  L1 Instruction 32 KiB (x6)
+  L2 Unified 256 KiB (x6)
+  L3 Unified 12288 KiB (x1)
+Load Average: 0.69, 0.38, 0.15
+-----------------------------------------------------------------------------------------------------------
+Benchmark                                                                 Time             CPU   Iterations
+-----------------------------------------------------------------------------------------------------------
+NanologFixture/write/min_time:3.000/threads:1                           169 ns          169 ns     27916756
+NanologFixture/write/min_time:3.000/threads:2                           257 ns          514 ns      9332306
+NanologFixture/write/min_time:3.000/threads:4                           249 ns          995 ns      3849116
+NanologFixture/write/min_time:3.000/threads:8                           300 ns         2394 ns      1832560
+NanologFixture/write/iterations:2000/repeats:5/threads:1               70.4 ns         70.4 ns         2000
+NanologFixture/write/iterations:2000/repeats:5/threads:1               66.7 ns         66.9 ns         2000
+NanologFixture/write/iterations:2000/repeats:5/threads:1               66.8 ns         67.0 ns         2000
+NanologFixture/write/iterations:2000/repeats:5/threads:1               64.3 ns         64.6 ns         2000
+NanologFixture/write/iterations:2000/repeats:5/threads:1               63.2 ns         63.4 ns         2000
+NanologFixture/write/iterations:2000/repeats:5/threads:1_mean          66.3 ns         66.5 ns            5
+NanologFixture/write/iterations:2000/repeats:5/threads:1_median        66.7 ns         66.9 ns            5
+NanologFixture/write/iterations:2000/repeats:5/threads:1_stddev        2.75 ns         2.69 ns            5
+NanologFixture/write/iterations:2000/repeats:5/threads:1_cv            4.15 %          4.05 %             5
+NanologFixture/write/iterations:2000/repeats:5/threads:6               12.6 ns         75.8 ns        12000
+NanologFixture/write/iterations:2000/repeats:5/threads:6               13.3 ns         80.1 ns        12000
+NanologFixture/write/iterations:2000/repeats:5/threads:6               13.3 ns         77.2 ns        12000
+NanologFixture/write/iterations:2000/repeats:5/threads:6               16.0 ns         96.0 ns        12000
+NanologFixture/write/iterations:2000/repeats:5/threads:6               13.4 ns         80.4 ns        12000
+NanologFixture/write/iterations:2000/repeats:5/threads:6_mean          13.7 ns         81.9 ns            5
+NanologFixture/write/iterations:2000/repeats:5/threads:6_median        13.3 ns         80.1 ns            5
+NanologFixture/write/iterations:2000/repeats:5/threads:6_stddev        1.30 ns         8.10 ns            5
+NanologFixture/write/iterations:2000/repeats:5/threads:6_cv            9.46 %          9.89 %             5
+NanologFixture/write/iterations:2000/repeats:5/threads:12              10.9 ns          130 ns        24000
+NanologFixture/write/iterations:2000/repeats:5/threads:12              10.8 ns          130 ns        24000
+NanologFixture/write/iterations:2000/repeats:5/threads:12              11.4 ns          137 ns        24000
+NanologFixture/write/iterations:2000/repeats:5/threads:12              8.99 ns          108 ns        24000
+NanologFixture/write/iterations:2000/repeats:5/threads:12              13.3 ns          160 ns        24000
+NanologFixture/write/iterations:2000/repeats:5/threads:12_mean         11.1 ns          133 ns            5
+NanologFixture/write/iterations:2000/repeats:5/threads:12_median       10.9 ns          130 ns            5
+NanologFixture/write/iterations:2000/repeats:5/threads:12_stddev       1.55 ns         18.6 ns            5
+NanologFixture/write/iterations:2000/repeats:5/threads:12_cv          13.93 %         13.97 %             5
+NanologFixture/write/iterations:2000/repeats:5/threads:24              6.34 ns          152 ns        48000
+NanologFixture/write/iterations:2000/repeats:5/threads:24              6.19 ns          149 ns        48000
+NanologFixture/write/iterations:2000/repeats:5/threads:24              7.98 ns          191 ns        48000
+NanologFixture/write/iterations:2000/repeats:5/threads:24              6.10 ns          146 ns        48000
+NanologFixture/write/iterations:2000/repeats:5/threads:24              6.45 ns          148 ns        48000
+NanologFixture/write/iterations:2000/repeats:5/threads:24_mean         6.61 ns          157 ns            5
+NanologFixture/write/iterations:2000/repeats:5/threads:24_median       6.34 ns          149 ns            5
+NanologFixture/write/iterations:2000/repeats:5/threads:24_stddev      0.774 ns         19.1 ns            5
+NanologFixture/write/iterations:2000/repeats:5/threads:24_cv          11.71 %         12.12 %             5

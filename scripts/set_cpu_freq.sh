@@ -13,7 +13,7 @@
 sudo cpupower frequency-set -g performance
 
 # with turbo boost enable, set max and min immediately
-sudo cpupower frequency-set --max 2GHz --min 2GHz
+sudo cpupower frequency-set --max 3.2GHz --min 3.2GHz
 
 # verify settings
 sudo cpupower frequency-info
