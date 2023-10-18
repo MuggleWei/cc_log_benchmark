@@ -52,6 +52,21 @@ Memory: 15659MiB
 gcc: (GCC) 13.2.1 20230801  
 ldd: (GNU libc) 2.38  
 
+### CPU 频率设置与监控
+执行 `cpupower frequency-info` 查看信息, 可以看到
+```
+analyzing CPU 7:
+  driver: intel_pstate
+  ...
+  hardware limits: 400 MHz - 4.70 GHz
+  ...
+  boost state support:
+    Supported: yes
+    Active: yes
+```
+
+在开始测试之前, 运行 `scripts/set_cpu_freq.sh` 来将 CPU 频率限制在固定的值上(这里我选择了 2GHz). 而后, 当运行基准测试时, 运行 `scripts/monitor_cpu_freq.sh` 来监控 CPU 频率, 确认没有因 CPU 温度过高而降率.  
+
 ### 额外说明
 由于我本地机器的测试中遇到一些问题, 导致 fmtlog, quill 和 reckless 没有做到测试场景完全的覆盖
 * 当 fmtlog 加入 `#define FMTLOG_BLOCK 1` 时, 测试进程会被卡死而无法继续, 所以 fmtlog 只测试了缓冲区满选择丢弃日志的模式

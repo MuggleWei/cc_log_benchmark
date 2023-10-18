@@ -16,6 +16,9 @@ echo "generate random data"
 run_benchmark() {
 	local name=$1
 	./bin/gbenchmark_$name 2>&1 | tee benchmark_$name.txt
+
+	echo "sleep for a while, wait CPU temperature drops"
+	sleep 10
 }
 
 run_benchmark easyloggingpp
