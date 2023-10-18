@@ -23,7 +23,7 @@
 注意: 由于部分日志库并不支持所有平台, 所以仅在 Linux 能够测试所有的日志库.  
 
 ## 基准测试
-测试日期: 2023-10-14  
+测试日期: 2023-10-18  
 被测库版本, 详见: [CMakeLists.txt](./CMakeLists.txt)  
 单次写入数据: 
 ```
@@ -52,6 +52,21 @@ Memory: 15659MiB
 gcc: (GCC) 13.2.1 20230801  
 ldd: (GNU libc) 2.38  
 
+### CPU 频率设置与监控
+执行 `cpupower frequency-info` 查看信息, 可以看到
+```
+analyzing CPU 7:
+  driver: intel_pstate
+  ...
+  hardware limits: 400 MHz - 4.70 GHz
+  ...
+  boost state support:
+    Supported: yes
+    Active: yes
+```
+
+在开始测试之前, 运行 `scripts/set_cpu_freq.sh` 来将 CPU 频率限制在固定的值上(这里我选择了 2GHz). 而后, 当运行基准测试时, 运行 `scripts/monitor_cpu_freq.sh` 来监控 CPU 频率, 确认没有因 CPU 温度过高而降率.  
+
 ### 额外说明
 由于我本地机器的测试中遇到一些问题, 导致 fmtlog, quill 和 reckless 没有做到测试场景完全的覆盖
 * 当 fmtlog 加入 `#define FMTLOG_BLOCK 1` 时, 测试进程会被卡死而无法继续, 所以 fmtlog 只测试了缓冲区满选择丢弃日志的模式
@@ -62,13 +77,13 @@ ldd: (GNU libc) 2.38
 **由于个人水平所限, 若有错误和纰漏, 亦或是考虑欠妥之处, 还请不吝指正!**  
 
 ## 基准测试结果
-在 [gbenchmark](./report/benchmark_20231014/gbenchmark) 目录中, 可以找到我本地机器的基准测试报告的详细信息, 图表化表示如下:  
+在 [gbenchmark](./report/benchmark_20231018/gbenchmark) 目录中, 可以找到我本地机器的基准测试报告的详细信息, 图表化表示如下:  
 
 **场景1**: 设定最小的测试时间 (x轴: 日志库+线程数, y轴: 写入耗时 (单位 ns))
-<img src="./report/benchmark_20231014/img/min_time.svg" />
+<img src="./report/benchmark_20231018/img/min_time.svg" />
 
 **场景2**: 设定迭代和重复次数 (x轴: 日志库+线程数, y轴: 写入耗时(5次重复测试的中位数)(单位 ns))
-<img src="./report/benchmark_20231014/img/iter_repeat.svg" />
+<img src="./report/benchmark_20231018/img/iter_repeat.svg" />
 
 ## 结果分析
 通过上述图表不难看出  

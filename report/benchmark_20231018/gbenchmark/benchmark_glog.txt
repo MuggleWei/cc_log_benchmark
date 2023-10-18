@@ -1,0 +1,52 @@
+2023-10-18T20:28:22+08:00
+Running ./bin/gbenchmark_glog
+Run on (12 X 3200 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x6)
+  L1 Instruction 32 KiB (x6)
+  L2 Unified 256 KiB (x6)
+  L3 Unified 12288 KiB (x1)
+Load Average: 0.51, 0.21, 0.08
+--------------------------------------------------------------------------------------------------------
+Benchmark                                                              Time             CPU   Iterations
+--------------------------------------------------------------------------------------------------------
+GlogFixture/write/min_time:3.000/threads:1                          4636 ns         4633 ns       893167
+GlogFixture/write/min_time:3.000/threads:2                          4176 ns         7427 ns       577652
+GlogFixture/write/min_time:3.000/threads:4                          4086 ns        10801 ns       392056
+GlogFixture/write/min_time:3.000/threads:8                          5344 ns        17542 ns       246208
+GlogFixture/write/iterations:2000/repeats:5/threads:1               4765 ns         4759 ns         2000
+GlogFixture/write/iterations:2000/repeats:5/threads:1               4746 ns         4744 ns         2000
+GlogFixture/write/iterations:2000/repeats:5/threads:1               4737 ns         4731 ns         2000
+GlogFixture/write/iterations:2000/repeats:5/threads:1               4745 ns         4742 ns         2000
+GlogFixture/write/iterations:2000/repeats:5/threads:1               4743 ns         4739 ns         2000
+GlogFixture/write/iterations:2000/repeats:5/threads:1_mean          4747 ns         4743 ns            5
+GlogFixture/write/iterations:2000/repeats:5/threads:1_median        4745 ns         4742 ns            5
+GlogFixture/write/iterations:2000/repeats:5/threads:1_stddev        10.5 ns         9.96 ns            5
+GlogFixture/write/iterations:2000/repeats:5/threads:1_cv            0.22 %          0.21 %             5
+GlogFixture/write/iterations:2000/repeats:5/threads:6               5031 ns        15432 ns        12000
+GlogFixture/write/iterations:2000/repeats:5/threads:6               4090 ns        12767 ns        12000
+GlogFixture/write/iterations:2000/repeats:5/threads:6               4654 ns        14464 ns        12000
+GlogFixture/write/iterations:2000/repeats:5/threads:6               4023 ns        12508 ns        12000
+GlogFixture/write/iterations:2000/repeats:5/threads:6               4846 ns        15129 ns        12000
+GlogFixture/write/iterations:2000/repeats:5/threads:6_mean          4529 ns        14060 ns            5
+GlogFixture/write/iterations:2000/repeats:5/threads:6_median        4654 ns        14464 ns            5
+GlogFixture/write/iterations:2000/repeats:5/threads:6_stddev         452 ns         1348 ns            5
+GlogFixture/write/iterations:2000/repeats:5/threads:6_cv            9.98 %          9.59 %             5
+GlogFixture/write/iterations:2000/repeats:5/threads:12              5972 ns        19544 ns        24000
+GlogFixture/write/iterations:2000/repeats:5/threads:12              5934 ns        19435 ns        24000
+GlogFixture/write/iterations:2000/repeats:5/threads:12              5934 ns        19448 ns        24000
+GlogFixture/write/iterations:2000/repeats:5/threads:12              5901 ns        19404 ns        24000
+GlogFixture/write/iterations:2000/repeats:5/threads:12              5907 ns        19329 ns        24000
+GlogFixture/write/iterations:2000/repeats:5/threads:12_mean         5930 ns        19432 ns            5
+GlogFixture/write/iterations:2000/repeats:5/threads:12_median       5934 ns        19435 ns            5
+GlogFixture/write/iterations:2000/repeats:5/threads:12_stddev       28.0 ns         77.6 ns            5
+GlogFixture/write/iterations:2000/repeats:5/threads:12_cv           0.47 %          0.40 %             5
+GlogFixture/write/iterations:2000/repeats:5/threads:24              6003 ns        20943 ns        48000
+GlogFixture/write/iterations:2000/repeats:5/threads:24              5987 ns        21038 ns        48000
+GlogFixture/write/iterations:2000/repeats:5/threads:24              5994 ns        21022 ns        48000
+GlogFixture/write/iterations:2000/repeats:5/threads:24              5994 ns        20850 ns        48000
+GlogFixture/write/iterations:2000/repeats:5/threads:24              5981 ns        20924 ns        48000
+GlogFixture/write/iterations:2000/repeats:5/threads:24_mean         5992 ns        20955 ns            5
+GlogFixture/write/iterations:2000/repeats:5/threads:24_median       5994 ns        20943 ns            5
+GlogFixture/write/iterations:2000/repeats:5/threads:24_stddev       8.12 ns         76.8 ns            5
+GlogFixture/write/iterations:2000/repeats:5/threads:24_cv           0.14 %          0.37 %             5
