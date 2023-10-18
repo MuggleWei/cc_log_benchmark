@@ -36,7 +36,7 @@
 <text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Microsoft YaHei;" y="6" transform="translate(1534.8667 780)" fill="#6E7079">spdlog_sync</text>
 <path d="M194.5493 772l28.08 0l0 -460.5453l-28.08 0Z" fill="#5470c6"></path>
 <path d="M354.016 772l28.08 0l0 -7.0844l-28.08 0Z" fill="#5470c6"></path>
-<path d="M513.4827 772l28.08 0l0 -550.1387l-28.08 0Z" fill="rgb(84,112,198)"></path>
+<path d="M513.4827 772l28.08 0l0 -550.1387l-28.08 0Z" fill="#5470c6"></path>
 <path d="M672.9493 772l28.08 0l0 -15.4267l-28.08 0Z" fill="#5470c6"></path>
 <path d="M832.416 772l28.08 0l0 -332.148l-28.08 0Z" fill="#5470c6"></path>
 <path d="M991.8827 772l28.08 0l0 -20.0547l-28.08 0Z" fill="#5470c6"></path>
@@ -45,7 +45,7 @@
 <path d="M1470.2827 772l28.08 0l0 -67.5213l-28.08 0Z" fill="#5470c6"></path>
 <path d="M228.2453 772l28.08 0l0 -519.5227l-28.08 0Z" fill="#91cc75"></path>
 <path d="M387.712 772l28.08 0l0 -3.5244l-28.08 0Z" fill="#91cc75"></path>
-<path d="M547.1787 772l28.08 0l0 -495.552l-28.08 0Z" fill="rgb(145,204,117)"></path>
+<path d="M547.1787 772l28.08 0l0 -495.552l-28.08 0Z" fill="#91cc75"></path>
 <path d="M706.6453 772l28.08 0l0 -8.01l-28.08 0Z" fill="#91cc75"></path>
 <path d="M866.112 772l28.08 0l0 -492.2293l-28.08 0Z" fill="#91cc75"></path>
 <path d="M1025.5787 772l28.08 0l0 -30.4973l-28.08 0Z" fill="#91cc75"></path>
@@ -54,16 +54,16 @@
 <path d="M1503.9787 772l28.08 0l0 -95.764l-28.08 0Z" fill="#91cc75"></path>
 <path d="M261.9413 772l28.08 0l0 -498.4l-28.08 0Z" fill="#fac858"></path>
 <path d="M421.408 772l28.08 0l0 -1.7563l-28.08 0Z" fill="#fac858"></path>
-<path d="M580.8747 772l28.08 0l0 -484.872l-28.08 0Z" fill="rgb(250,200,88)"></path>
+<path d="M580.8747 772l28.08 0l0 -484.872l-28.08 0Z" fill="#fac858"></path>
 <path d="M740.3413 772l28.08 0l0 -5.4824l-28.08 0Z" fill="#fac858"></path>
-<path d="M899.808 772l28.08 0l0 -562.5987l-28.08 0Z" fill="rgb(250,200,88)"></path>
+<path d="M899.808 772l28.08 0l0 -562.5987l-28.08 0Z" fill="#fac858"></path>
 <path d="M1059.2747 772l28.08 0l0 -29.548l-28.08 0Z" fill="#fac858"></path>
 <path d="M1218.7413 772l28.08 0l0 -1.5427l-28.08 0Z" fill="#fac858"></path>
 <path d="M1378.208 772l28.08 0l0 -172.8973l-28.08 0Z" fill="#fac858"></path>
 <path d="M1537.6747 772l28.08 0l0 -105.9693l-28.08 0Z" fill="#fac858"></path>
 <path d="M295.6373 772l28.08 0l0 -396.3467l-28.08 0Z" fill="#ee6666"></path>
 <path d="M455.104 772l28.08 0l0 -0.9909l-28.08 0Z" fill="#ee6666"></path>
-<path d="M614.5707 772l28.08 0l0 -634.1547l-28.08 0Z" fill="rgb(238,102,102)"></path>
+<path d="M614.5707 772l28.08 0l0 -634.1547l-28.08 0Z" fill="#ee6666"></path>
 <path d="M774.0373 772l28.08 0l0 -117.836l-28.08 0Z" fill="#ee6666"></path>
 <path d="M933.504 772l28.08 0l0 -452.2387l-28.08 0Z" fill="#ee6666"></path>
 <path d="M1092.9707 772l28.08 0l0 -35.6l-28.08 0Z" fill="#ee6666"></path>
