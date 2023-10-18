@@ -1,86 +1,96 @@
-<svg width="1506" height="842" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 1506 842">
-<rect width="1506" height="842" x="0" y="0" id="0" fill="none"></rect>
-<path d="M150.6 772.5L1355.4 772.5" fill="none" stroke="#E0E6F1"></path>
-<path d="M150.6 670.5L1355.4 670.5" fill="none" stroke="#E0E6F1"></path>
-<path d="M150.6 568.5L1355.4 568.5" fill="none" stroke="#E0E6F1"></path>
-<path d="M150.6 467.5L1355.4 467.5" fill="none" stroke="#E0E6F1"></path>
-<path d="M150.6 365.5L1355.4 365.5" fill="none" stroke="#E0E6F1"></path>
-<path d="M150.6 263.5L1355.4 263.5" fill="none" stroke="#E0E6F1"></path>
-<path d="M150.6 161.5L1355.4 161.5" fill="none" stroke="#E0E6F1"></path>
-<path d="M150.6 60.5L1355.4 60.5" fill="none" stroke="#E0E6F1"></path>
-<path d="M150.6 772.5L1355.4 772.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
-<path d="M150.5 772L150.5 777" fill="none" stroke="#6E7079"></path>
-<path d="M369.5 772L369.5 777" fill="none" stroke="#6E7079"></path>
-<path d="M588.5 772L588.5 777" fill="none" stroke="#6E7079"></path>
-<path d="M808.5 772L808.5 777" fill="none" stroke="#6E7079"></path>
-<path d="M1027.5 772L1027.5 777" fill="none" stroke="#6E7079"></path>
-<path d="M1246.5 772L1246.5 777" fill="none" stroke="#6E7079"></path>
-<path d="M1355.5 772L1355.5 777" fill="none" stroke="#6E7079"></path>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Microsoft YaHei;" transform="translate(142.6 772)" fill="#6E7079">0</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Microsoft YaHei;" transform="translate(142.6 670.2857)" fill="#6E7079">1,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Microsoft YaHei;" transform="translate(142.6 568.5714)" fill="#6E7079">2,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Microsoft YaHei;" transform="translate(142.6 466.8571)" fill="#6E7079">3,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Microsoft YaHei;" transform="translate(142.6 365.1429)" fill="#6E7079">4,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Microsoft YaHei;" transform="translate(142.6 263.4286)" fill="#6E7079">5,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Microsoft YaHei;" transform="translate(142.6 161.7143)" fill="#6E7079">6,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Microsoft YaHei;" transform="translate(142.6 60)" fill="#6E7079">7,000</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Microsoft YaHei;" y="6" transform="translate(205.3636 780)" fill="#6E7079">easyloggingpp</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Microsoft YaHei;" y="6" transform="translate(424.4182 780)" fill="#6E7079">glog</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Microsoft YaHei;" y="6" transform="translate(643.4727 780)" fill="#6E7079">loguru</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Microsoft YaHei;" y="6" transform="translate(862.5273 780)" fill="#6E7079">quill_bounded</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Microsoft YaHei;" y="6" transform="translate(1081.5818 780)" fill="#6E7079">reckless</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Microsoft YaHei;" y="6" transform="translate(1300.6364 780)" fill="#6E7079">spdlog_sync</text>
-<path d="M161.0051 772l19.2863 0l0 -403.5006l-19.2863 0Z" fill="rgb(84,112,198)"></path>
-<path d="M270.5324 772l19.2863 0l0 -7.9642l-19.2863 0Z" fill="rgb(84,112,198)"></path>
-<path d="M380.0596 772l19.2863 0l0 -482.6343l-19.2863 0Z" fill="rgb(84,112,198)"></path>
-<path d="M489.5869 772l19.2863 0l0 -13.6297l-19.2863 0Z" fill="rgb(84,112,198)"></path>
-<path d="M599.1142 772l19.2863 0l0 -314.2971l-19.2863 0Z" fill="rgb(84,112,198)"></path>
-<path d="M708.6415 772l19.2863 0l0 -6.7843l-19.2863 0Z" fill="rgb(84,112,198)"></path>
-<path d="M818.1687 772l19.2863 0l0 -6.5199l-19.2863 0Z" fill="rgb(84,112,198)"></path>
-<path d="M1146.7505 772l19.2863 0l0 -61.4354l-19.2863 0Z" fill="rgb(84,112,198)"></path>
-<path d="M1256.2778 772l19.2863 0l0 -59.096l-19.2863 0Z" fill="rgb(84,112,198)"></path>
-<path d="M927.696 772l19.2863 0l0 -8.839l-19.2863 0Z" fill="rgb(84,112,198)"></path>
-<path d="M1037.2233 772l19.2863 0l0 -52.2811l-19.2863 0Z" fill="rgb(84,112,198)"></path>
-<path d="M184.1487 772l19.2863 0l0 -294.6663l-19.2863 0Z" fill="#91cc75"></path>
-<path d="M293.676 772l19.2863 0l0 -4.8823l-19.2863 0Z" fill="#91cc75"></path>
-<path d="M403.2032 772l19.2863 0l0 -473.3783l-19.2863 0Z" fill="#91cc75"></path>
-<path d="M512.7305 772l19.2863 0l0 -2.4818l-19.2863 0Z" fill="#91cc75"></path>
-<path d="M622.2578 772l19.2863 0l0 -481.6171l-19.2863 0Z" fill="#91cc75"></path>
-<path d="M731.785 772l19.2863 0l0 -1.3528l-19.2863 0Z" fill="#91cc75"></path>
-<path d="M841.3123 772l19.2863 0l0 -62.5543l-19.2863 0Z" fill="#91cc75"></path>
-<path d="M1169.8941 772l19.2863 0l0 -194.8846l-19.2863 0Z" fill="#91cc75"></path>
-<path d="M1279.4214 772l19.2863 0l0 -83.8126l-19.2863 0Z" fill="#91cc75"></path>
-<path d="M950.8396 772l19.2863 0l0 -42.1097l-19.2863 0Z" fill="#91cc75"></path>
-<path d="M1060.3669 772l19.2863 0l0 -45.8731l-19.2863 0Z" fill="#91cc75"></path>
-<path d="M207.2923 772l19.2863 0l0 -282.9691l-19.2863 0Z" fill="#fac858"></path>
-<path d="M316.8195 772l19.2863 0l0 -3.7431l-19.2863 0Z" fill="#fac858"></path>
-<path d="M426.3468 772l19.2863 0l0 -603.5726l-19.2863 0Z" fill="#fac858"></path>
-<path d="M535.8741 772l19.2863 0l0 -3.2142l-19.2863 0Z" fill="#fac858"></path>
-<path d="M645.4014 772l19.2863 0l0 -626.3566l-19.2863 0Z" fill="#fac858"></path>
-<path d="M754.9286 772l19.2863 0l0 -1.1087l-19.2863 0Z" fill="#fac858"></path>
-<path d="M864.4559 772l19.2863 0l0 -66.0126l-19.2863 0Z" fill="#fac858"></path>
-<path d="M1193.0377 772l19.2863 0l0 -177.6949l-19.2863 0Z" fill="#fac858"></path>
-<path d="M1302.565 772l19.2863 0l0 -107.6137l-19.2863 0Z" fill="#fac858"></path>
-<path d="M973.9832 772l19.2863 0l0 -68.2503l-19.2863 0Z" fill="#fac858"></path>
-<path d="M1083.5105 772l19.2863 0l0 -48.3143l-19.2863 0Z" fill="#fac858"></path>
-<path d="M230.4359 772l19.2863 0l0 -274.3234l-19.2863 0Z" fill="#ee6666"></path>
-<path d="M339.9631 772l19.2863 0l0 -2.9701l-19.2863 0Z" fill="#ee6666"></path>
-<path d="M449.4904 772l19.2863 0l0 -609.6754l-19.2863 0Z" fill="#ee6666"></path>
-<path d="M559.0177 772l19.2863 0l0 -1.719l-19.2863 0Z" fill="#ee6666"></path>
-<path d="M668.5449 772l19.2863 0l0 -635.7143l-19.2863 0Z" fill="#ee6666"></path>
-<path d="M778.0722 772l19.2863 0l0 -0.6449l-19.2863 0Z" fill="#ee6666"></path>
-<path d="M887.5995 772l19.2863 0l0 -67.3349l-19.2863 0Z" fill="#ee6666"></path>
-<path d="M1216.1813 772l19.2863 0l0 -166.0994l-19.2863 0Z" fill="#ee6666"></path>
-<path d="M1325.7086 772l19.2863 0l0 -109.7497l-19.2863 0Z" fill="#ee6666"></path>
-<path d="M997.1268 772l19.2863 0l0 -65.1989l-19.2863 0Z" fill="#ee6666"></path>
-<path d="M1106.654 772l19.2863 0l0 -40.2789l-19.2863 0Z" fill="#ee6666"></path>
-<path d="M-5 -5l382.6445 0l0 24l-382.6445 0Z" transform="translate(566.6777 5)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0"></path>
-<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(566.6777 5)" fill="#5470c6"></path>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Microsoft YaHei;" xml:space="preserve" x="30" y="7" transform="translate(566.6777 5)" fill="#333">1 thread</text>
-<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(654.6543 5)" fill="#91cc75"></path>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Microsoft YaHei;" xml:space="preserve" x="30" y="7" transform="translate(654.6543 5)" fill="#333">6 threads</text>
-<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(748.1855 5)" fill="#fac858"></path>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Microsoft YaHei;" xml:space="preserve" x="30" y="7" transform="translate(748.1855 5)" fill="#333">12 threads</text>
-<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(848.7539 5)" fill="#ee6666"></path>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Microsoft YaHei;" xml:space="preserve" x="30" y="7" transform="translate(848.7539 5)" fill="#333">24 threads</text>
+<svg width="1794" height="842" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 1794 842">
+<rect width="1794" height="842" x="0" y="0" id="0" fill="none"></rect>
+<path d="M179.4 772.5L1614.6 772.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M179.4 670.5L1614.6 670.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M179.4 568.5L1614.6 568.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M179.4 467.5L1614.6 467.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M179.4 365.5L1614.6 365.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M179.4 263.5L1614.6 263.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M179.4 161.5L1614.6 161.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M179.4 60.5L1614.6 60.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M179.4 772.5L1614.6 772.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<path d="M179.5 772L179.5 777" fill="none" stroke="#6E7079"></path>
+<path d="M310.5 772L310.5 777" fill="none" stroke="#6E7079"></path>
+<path d="M440.5 772L440.5 777" fill="none" stroke="#6E7079"></path>
+<path d="M571.5 772L571.5 777" fill="none" stroke="#6E7079"></path>
+<path d="M701.5 772L701.5 777" fill="none" stroke="#6E7079"></path>
+<path d="M832.5 772L832.5 777" fill="none" stroke="#6E7079"></path>
+<path d="M962.5 772L962.5 777" fill="none" stroke="#6E7079"></path>
+<path d="M1092.5 772L1092.5 777" fill="none" stroke="#6E7079"></path>
+<path d="M1223.5 772L1223.5 777" fill="none" stroke="#6E7079"></path>
+<path d="M1353.5 772L1353.5 777" fill="none" stroke="#6E7079"></path>
+<path d="M1484.5 772L1484.5 777" fill="none" stroke="#6E7079"></path>
+<path d="M1614.5 772L1614.5 777" fill="none" stroke="#6E7079"></path>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Microsoft YaHei;" transform="translate(171.4 772)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Microsoft YaHei;" transform="translate(171.4 670.2857)" fill="#6E7079">1,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Microsoft YaHei;" transform="translate(171.4 568.5714)" fill="#6E7079">2,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Microsoft YaHei;" transform="translate(171.4 466.8571)" fill="#6E7079">3,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Microsoft YaHei;" transform="translate(171.4 365.1429)" fill="#6E7079">4,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Microsoft YaHei;" transform="translate(171.4 263.4286)" fill="#6E7079">5,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Microsoft YaHei;" transform="translate(171.4 161.7143)" fill="#6E7079">6,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Microsoft YaHei;" transform="translate(171.4 60)" fill="#6E7079">7,000</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Microsoft YaHei;" y="6" transform="translate(244.6364 780)" fill="#6E7079">easyloggingpp</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Microsoft YaHei;" y="6" transform="translate(375.1091 780)" fill="#6E7079">fmtlog</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Microsoft YaHei;" y="6" transform="translate(505.5818 780)" fill="#6E7079">glog</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Microsoft YaHei;" y="6" transform="translate(636.0545 780)" fill="#6E7079">haclog</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Microsoft YaHei;" y="6" transform="translate(766.5273 780)" fill="#6E7079">loguru</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Microsoft YaHei;" y="6" transform="translate(897 780)" fill="#6E7079">nanolog</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Microsoft YaHei;" y="6" transform="translate(1027.4727 780)" fill="#6E7079">quill_bounded</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Microsoft YaHei;" y="6" transform="translate(1157.9455 780)" fill="#6E7079">quill_unbounded</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Microsoft YaHei;" y="6" transform="translate(1288.4182 780)" fill="#6E7079">reckless</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Microsoft YaHei;" y="6" transform="translate(1418.8909 780)" fill="#6E7079">spdlog_async</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Microsoft YaHei;" y="6" transform="translate(1549.3636 780)" fill="#6E7079">spdlog_sync</text>
+<path d="M191.7949 772l22.9745 0l0 -403.5006l-22.9745 0Z" fill="#5470c6"></path>
+<path d="M322.2676 772l22.9745 0l0 -7.9642l-22.9745 0Z" fill="#5470c6"></path>
+<path d="M452.7404 772l22.9745 0l0 -482.6343l-22.9745 0Z" fill="rgb(84,112,198)"></path>
+<path d="M583.2131 772l22.9745 0l0 -13.6297l-22.9745 0Z" fill="#5470c6"></path>
+<path d="M713.6858 772l22.9745 0l0 -314.2971l-22.9745 0Z" fill="rgb(84,112,198)"></path>
+<path d="M844.1585 772l22.9745 0l0 -6.7843l-22.9745 0Z" fill="#5470c6"></path>
+<path d="M974.6313 772l22.9745 0l0 -6.5199l-22.9745 0Z" fill="#5470c6"></path>
+<path d="M1366.0495 772l22.9745 0l0 -61.4354l-22.9745 0Z" fill="#5470c6"></path>
+<path d="M1496.5222 772l22.9745 0l0 -59.096l-22.9745 0Z" fill="#5470c6"></path>
+<path d="M1105.104 772l22.9745 0l0 -8.839l-22.9745 0Z" fill="#5470c6"></path>
+<path d="M1235.5767 772l22.9745 0l0 -52.2811l-22.9745 0Z" fill="#5470c6"></path>
+<path d="M219.3644 772l22.9745 0l0 -294.6663l-22.9745 0Z" fill="#91cc75"></path>
+<path d="M349.8371 772l22.9745 0l0 -4.8823l-22.9745 0Z" fill="#91cc75"></path>
+<path d="M480.3098 772l22.9745 0l0 -473.3783l-22.9745 0Z" fill="#91cc75"></path>
+<path d="M610.7825 772l22.9745 0l0 -2.4818l-22.9745 0Z" fill="#91cc75"></path>
+<path d="M741.2553 772l22.9745 0l0 -481.6171l-22.9745 0Z" fill="rgb(145,204,117)"></path>
+<path d="M871.728 772l22.9745 0l0 -1.3528l-22.9745 0Z" fill="#91cc75"></path>
+<path d="M1002.2007 772l22.9745 0l0 -62.5543l-22.9745 0Z" fill="#91cc75"></path>
+<path d="M1393.6189 772l22.9745 0l0 -194.8846l-22.9745 0Z" fill="#91cc75"></path>
+<path d="M1524.0916 772l22.9745 0l0 -83.8126l-22.9745 0Z" fill="#91cc75"></path>
+<path d="M1132.6735 772l22.9745 0l0 -42.1097l-22.9745 0Z" fill="#91cc75"></path>
+<path d="M1263.1462 772l22.9745 0l0 -45.8731l-22.9745 0Z" fill="#91cc75"></path>
+<path d="M246.9338 772l22.9745 0l0 -282.9691l-22.9745 0Z" fill="#fac858"></path>
+<path d="M377.4065 772l22.9745 0l0 -3.7431l-22.9745 0Z" fill="#fac858"></path>
+<path d="M507.8793 772l22.9745 0l0 -603.5726l-22.9745 0Z" fill="rgb(250,200,88)"></path>
+<path d="M638.352 772l22.9745 0l0 -3.2142l-22.9745 0Z" fill="#fac858"></path>
+<path d="M768.8247 772l22.9745 0l0 -626.3566l-22.9745 0Z" fill="rgb(250,200,88)"></path>
+<path d="M899.2975 772l22.9745 0l0 -1.1087l-22.9745 0Z" fill="#fac858"></path>
+<path d="M1029.7702 772l22.9745 0l0 -66.0126l-22.9745 0Z" fill="#fac858"></path>
+<path d="M1421.1884 772l22.9745 0l0 -177.6949l-22.9745 0Z" fill="#fac858"></path>
+<path d="M1551.6611 772l22.9745 0l0 -107.6137l-22.9745 0Z" fill="#fac858"></path>
+<path d="M1160.2429 772l22.9745 0l0 -68.2503l-22.9745 0Z" fill="#fac858"></path>
+<path d="M1290.7156 772l22.9745 0l0 -48.3143l-22.9745 0Z" fill="#fac858"></path>
+<path d="M274.5033 772l22.9745 0l0 -274.3234l-22.9745 0Z" fill="#ee6666"></path>
+<path d="M404.976 772l22.9745 0l0 -2.9701l-22.9745 0Z" fill="#ee6666"></path>
+<path d="M535.4487 772l22.9745 0l0 -609.6754l-22.9745 0Z" fill="#ee6666"></path>
+<path d="M665.9215 772l22.9745 0l0 -1.719l-22.9745 0Z" fill="#ee6666"></path>
+<path d="M796.3942 772l22.9745 0l0 -635.7143l-22.9745 0Z" fill="rgb(238,102,102)"></path>
+<path d="M926.8669 772l22.9745 0l0 -0.6449l-22.9745 0Z" fill="#ee6666"></path>
+<path d="M1057.3396 772l22.9745 0l0 -67.3349l-22.9745 0Z" fill="#ee6666"></path>
+<path d="M1448.7578 772l22.9745 0l0 -166.0994l-22.9745 0Z" fill="#ee6666"></path>
+<path d="M1579.2305 772l22.9745 0l0 -109.7497l-22.9745 0Z" fill="#ee6666"></path>
+<path d="M1187.8124 772l22.9745 0l0 -65.1989l-22.9745 0Z" fill="#ee6666"></path>
+<path d="M1318.2851 772l22.9745 0l0 -40.2789l-22.9745 0Z" fill="#ee6666"></path>
+<path d="M-5 -5l382.6445 0l0 24l-382.6445 0Z" transform="translate(710.6777 5)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0"></path>
+<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(710.6777 5)" fill="#5470c6"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Microsoft YaHei;" xml:space="preserve" x="30" y="7" transform="translate(710.6777 5)" fill="#333">1 thread</text>
+<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(798.6543 5)" fill="#91cc75"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Microsoft YaHei;" xml:space="preserve" x="30" y="7" transform="translate(798.6543 5)" fill="#333">6 threads</text>
+<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(892.1855 5)" fill="#fac858"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Microsoft YaHei;" xml:space="preserve" x="30" y="7" transform="translate(892.1855 5)" fill="#333">12 threads</text>
+<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(992.7539 5)" fill="#ee6666"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Microsoft YaHei;" xml:space="preserve" x="30" y="7" transform="translate(992.7539 5)" fill="#333">24 threads</text>
 </svg>
