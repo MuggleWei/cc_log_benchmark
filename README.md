@@ -23,7 +23,7 @@ Run `build.sh` (`build.bat` in Windows) to build, The log library under test wil
 Note: Since some log libraries do not support all platforms, Only linux can guarantee all log libraries be tested.  
 
 ## Benchmark
-Date: 2023-10-14  
+Date: 2023-10-18  
 Log libraries' version, see: [CMakeLists.txt](./CMakeLists.txt)  
 Write data per time:
 ```
@@ -51,6 +51,21 @@ Memory: 15659MiB
 gcc: (GCC) 13.2.1 20230801  
 ldd: (GNU libc) 2.38  
 
+### CPU frequency setting and monitoring
+Execute `cpupower frequency-info` to view the information in my machine
+```
+analyzing CPU 7:
+   driver: intel_pstate
+   ...
+   hardware limits: 400 MHz - 4.70 GHz
+   ...
+   boost state support:
+     Supported: yes
+     Active: yes
+```
+
+Before starting the benchmark, run `scripts/set_cpu_freq.sh` to limit the CPU frequency to a fixed value (here I chose 3.2GHz). Then, when running the benchmark, run `scripts/monitor_cpu_freq.sh` to monitor the CPU frequency, and confirm that there is no rate drop due to high CPU temperature.
+
 ### Extra Instructions
 Due to some problems encountered during benchmark on my local machine, `fmtlog`, `quill` and `reckless` did not fully cover all scenarios.  
 * When `#define FMTLOG_BLOCK 1` in `fmtlog`, the benchmark process will be stuck and unable to continue, so `fmtlog` only tested the mode that discard log when the buffer is full
@@ -60,13 +75,13 @@ Due to some problems encountered during benchmark on my local machine, `fmtlog`,
 **Due to personal limitations, if there are any errors, omissions, or lack of consideration, please feel free to correct me!**
 
 ## Result of Benchmark
-In the [gbenchmark](./report/benchmark_20231014/gbenchmark) directory, you can find the details of the benchmark report of my local machine, graphically represented as follows:  
+In the [gbenchmark](./report/benchmark_20231018/gbenchmark) directory, you can find the details of the benchmark report of my local machine, graphically represented as follows:  
 
 **Scenario 1**: Determine the minimum test time (x axis: logging library + number of threads, y axis: elapsed time (ns))
-<img src="./report/benchmark_20231014/img/min_time.svg" />
+<img src="./report/benchmark_20231018/img/min_time.svg" />
 
 **Scenario 2**: Determine the number of iterations and repetitions (x axis: logging library + number of threads, y axis: elapsed time of median of 5 replicate benchmarks (ns))
-<img src="./report/benchmark_20231014/img/iter_repeat.svg" />
+<img src="./report/benchmark_20231018/img/iter_repeat.svg" />
 
 ## Result analysis
 It is easy to see from the above chart
