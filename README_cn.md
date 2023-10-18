@@ -65,7 +65,7 @@ analyzing CPU 7:
     Active: yes
 ```
 
-在开始测试之前, 运行 `scripts/set_cpu_freq.sh` 来将 CPU 频率限制在固定的值上(这里我选择了 2GHz). 而后, 当运行基准测试时, 运行 `scripts/monitor_cpu_freq.sh` 来监控 CPU 频率, 确认没有因 CPU 温度过高而降率.  
+在开始测试之前, 运行 `scripts/set_cpu_freq.sh` 来将 CPU 频率限制在固定的值上(这里我选择了 3.2GHz). 而后, 当运行基准测试时, 运行 `scripts/monitor_cpu_freq.sh` 来监控 CPU 频率, 确认没有因 CPU 温度过高而降率.  
 
 ### 额外说明
 由于我本地机器的测试中遇到一些问题, 导致 fmtlog, quill 和 reckless 没有做到测试场景完全的覆盖
