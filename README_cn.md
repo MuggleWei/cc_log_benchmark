@@ -79,11 +79,25 @@ analyzing CPU 7:
 ## 基准测试结果
 在 [gbenchmark](./report/benchmark_20231018/gbenchmark) 目录中, 可以找到我本地机器的基准测试报告的详细信息, 图表化表示如下:  
 
-**场景1**: 设定最小的测试时间 (x轴: 日志库+线程数, y轴: 写入耗时 (单位 ns))
+**场景1**: 设定最小的测试时间 (x轴: 日志库+线程数, y轴: google benchmark - Time)
 <img src="./report/benchmark_20231018/img/min_time.svg" />
 
-**场景2**: 设定迭代和重复次数 (x轴: 日志库+线程数, y轴: 写入耗时(5次重复测试的中位数)(单位 ns))
+**场景2**: 设定迭代和重复次数 (x轴: 日志库+线程数, y轴: google benchmark - Time)
 <img src="./report/benchmark_20231018/img/iter_repeat.svg" />
+
+### 关于 y 轴的值
+y轴为 google benchmark - Time, 在多线程的情况下, 表示的并不是平均单次耗时, 而是按吞吐量和时间平均的结果. 具体公式为:  
+**google benchmark Time = (sum(每个线程的耗时) ÷ 线程数量) ÷ 总执行次数**  
+所以多线程的结果可进行横向对比, 但不可简单的认为是单次耗时. 若想得到多线程情况下的单次平均耗时数据, 可以修改 google benchmark (v1.8.3) 代码:  
+```
+// benchmark_runner.cc
+BenchmarkRunner::IterationResults BenchmarkRunner::DoNIterations() {
+  ...
+  // 注释掉下面这行即可
+  // i.results.real_time_used /= b.threads();
+  ...
+}
+```
 
 ## 结果分析
 通过上述图表不难看出  

@@ -77,11 +77,25 @@ Due to some problems encountered during benchmark on my local machine, `fmtlog`,
 ## Result of Benchmark
 In the [gbenchmark](./report/benchmark_20231018/gbenchmark) directory, you can find the details of the benchmark report of my local machine, graphically represented as follows:  
 
-**Scenario 1**: Determine the minimum test time (x axis: logging library + number of threads, y axis: elapsed time (ns))
+**Scenario 1**: Determine the minimum test time (x axis: logging library + number of threads, y axis: google benchmark - Time)
 <img src="./report/benchmark_20231018/img/min_time.svg" />
 
-**Scenario 2**: Determine the number of iterations and repetitions (x axis: logging library + number of threads, y axis: elapsed time of median of 5 replicate benchmarks (ns))
+**Scenario 2**: Determine the number of iterations and repetitions (x axis: logging library + number of threads, y axis: google benchmark - Time)
 <img src="./report/benchmark_20231018/img/iter_repeat.svg" />
+
+### About the y-axis values 
+The y-axis is google benchmark - Time. In the case of multi-threading, it does not represent the average single time consumption, but the average result based on throughput and time. The formula is:
+**google benchmark Time = (sum(time-consuming of each thread) ÷ number of threads) ÷ total number of executions**
+Therefore, the results of multi-threading can be compared horizontally, but it cannot be simply regarded as a single time consumption. If you want to get the average time-consuming data of a single time under multi-threading, you can modify the google benchmark (v1.8.3) codes:
+```
+// benchmark_runner.cc
+BenchmarkRunner::IterationResults BenchmarkRunner::DoNIterations() {
+   ...
+   // Just comment the following line
+   // i.results.real_time_used /= b.threads();
+   ...
+}
+```
 
 ## Result analysis
 It is easy to see from the above chart
