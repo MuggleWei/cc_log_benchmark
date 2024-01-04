@@ -220,7 +220,7 @@ if (benchmark_haclog)
 	FetchContent_Declare(
 		haclog
 		GIT_REPOSITORY https://github.com/MuggleWei/haclog.git
-		GIT_TAG "v0.0.4"
+		GIT_TAG "v0.1.3"
 		GIT_SHALLOW TRUE
 		GIT_PROGRESS TRUE
 		)
