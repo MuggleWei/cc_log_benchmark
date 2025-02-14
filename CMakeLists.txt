@@ -287,7 +287,7 @@ if (benchmark_quill)
 	FetchContent_Declare(
 		quill
 		GIT_REPOSITORY https://github.com/odygrd/quill.git
-		GIT_TAG v3.3.1
+		GIT_TAG v8.1.1
 		GIT_SHALLOW TRUE
 		GIT_PROGRESS TRUE
 		)
@@ -374,14 +374,22 @@ if (benchmark_nanolog)
 endif()
 
 if (benchmark_quill)
-	add_gbench(quill_unbounded ${gbenchmark_dir}/cpp/quill_unbounded)
-	add_dependencies(gbenchmark_quill_unbounded quill)
-	target_link_libraries(gbenchmark_quill_unbounded quill)
+	#add_gbench(quill_unbounded ${gbenchmark_dir}/cpp/quill_unbounded)
+	#add_dependencies(gbenchmark_quill_unbounded quill)
+	#target_link_libraries(gbenchmark_quill_unbounded quill)
 
-	add_gbench(quill_bounded ${gbenchmark_dir}/cpp/quill_bounded)
-	add_dependencies(gbenchmark_quill_bounded quill)
-	target_link_libraries(gbenchmark_quill_bounded quill)
-	target_compile_definitions(gbenchmark_quill_bounded PUBLIC QUILL_USE_BOUNDED_QUEUE)
+	#add_gbench(quill_bounded ${gbenchmark_dir}/cpp/quill_bounded)
+	#add_dependencies(gbenchmark_quill_bounded quill)
+	#target_link_libraries(gbenchmark_quill_bounded quill)
+	#target_compile_definitions(gbenchmark_quill_bounded PUBLIC QUILL_USE_BOUNDED_QUEUE)
+
+	add_gbench(quill_bounded_blocking ${gbenchmark_dir}/cpp/quill_bounded_blocking)
+	add_dependencies(gbenchmark_quill_bounded_blocking quill)
+	target_link_libraries(gbenchmark_quill_bounded_blocking quill)
+
+	add_gbench(quill_bounded_dropping ${gbenchmark_dir}/cpp/quill_bounded_dropping)
+	add_dependencies(gbenchmark_quill_bounded_dropping quill)
+	target_link_libraries(gbenchmark_quill_bounded_dropping quill)
 endif()
 
 if (benchmark_reckless)
