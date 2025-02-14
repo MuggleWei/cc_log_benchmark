@@ -48,6 +48,13 @@ static void DoTeardown(const benchmark::State &);
 			->Repetitions(REPEAT_COUNT)                               \
 			->Teardown(DoTeardown);                                   \
 		BENCHMARK_REGISTER_F(fixture, name)                           \
+			->Threads((std::thread::hardware_concurrency() / 4) > 0 ? \
+						  (std::thread::hardware_concurrency() / 4) : \
+						  1)                                          \
+			->Iterations(ITER_COUNT)                                  \
+			->Repetitions(REPEAT_COUNT)                               \
+			->Teardown(DoTeardown);                                   \
+		BENCHMARK_REGISTER_F(fixture, name)                           \
 			->Threads((std::thread::hardware_concurrency() / 2) > 0 ? \
 						  (std::thread::hardware_concurrency() / 2) : \
 						  1)                                          \
