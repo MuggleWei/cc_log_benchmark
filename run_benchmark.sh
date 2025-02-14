@@ -29,8 +29,8 @@ run_benchmark glog
 run_benchmark haclog
 run_benchmark loguru
 run_benchmark nanolog
-run_benchmark quill_bounded
-run_benchmark quill_unbounded
+run_benchmark quill_bounded_blocking
+run_benchmark quill_bounded_dropping
 run_benchmark reckless
 run_benchmark spdlog_async
 run_benchmark spdlog_sync
