@@ -208,7 +208,7 @@ if (benchmark_fmtlog)
 	FetchContent_Declare(
 		fmtlog
 		GIT_REPOSITORY https://github.com/MengRao/fmtlog.git
-		GIT_TAG v2.2.1
+		GIT_TAG v2.3.0
 		GIT_SHALLOW TRUE
 		GIT_PROGRESS TRUE
 		)

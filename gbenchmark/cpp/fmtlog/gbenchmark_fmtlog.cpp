@@ -6,6 +6,7 @@
 #include "log_msg/log_msg.h"
 // #define CUSTOM_TEARDOWN
 #include "gbenchmark/log_gbenchmark.h"
+#define FMTLOG_QUEUE_SIZE 4194304
 #include "fmtlog.h"
 
 std::once_flag init_flag;
@@ -43,6 +44,8 @@ public:
 
 			FMTLOG(fmtlog::INF, "hello");
 		});
+
+		fmtlog::preallocate();
 	}
 
 	void TearDown(const benchmark::State &state)
