@@ -22,7 +22,7 @@ run_benchmark() {
 }
 
 run_benchmark easyloggingpp
-run_benchmark fmtlog
+run_benchmark fmtlog_drop
 run_benchmark fmtlog_block
 run_benchmark glog
 run_benchmark haclog
