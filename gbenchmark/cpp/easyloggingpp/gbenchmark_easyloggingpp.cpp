@@ -20,9 +20,9 @@ INITIALIZE_EASYLOGGINGPP
 
 EXPAND_FUNCS
 
-class HaclogFixture : public benchmark::Fixture {
+class EasyLoggingFixture : public benchmark::Fixture {
 public:
-	HaclogFixture()
+	EasyLoggingFixture()
 	{
 		if (!LoadLogMsg(log_msgs)) {
 			fprintf(stderr,
@@ -57,4 +57,4 @@ public:
 	std::vector<LogMsg> log_msgs;
 };
 
-RUN_GBENCHMARK(HaclogFixture, write)
+RUN_GBENCHMARK(EasyLoggingFixture, write)

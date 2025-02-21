@@ -19,9 +19,9 @@ std::once_flag init_flag;
 
 EXPAND_FUNCS
 
-class HaclogFixture : public benchmark::Fixture {
+class LoguruFixture : public benchmark::Fixture {
 public:
-	HaclogFixture()
+	LoguruFixture()
 	{
 		if (!LoadLogMsg(log_msgs)) {
 			fprintf(stderr,
@@ -48,4 +48,4 @@ public:
 	std::vector<LogMsg> log_msgs;
 };
 
-RUN_GBENCHMARK(HaclogFixture, write)
+RUN_GBENCHMARK(LoguruFixture, write)
