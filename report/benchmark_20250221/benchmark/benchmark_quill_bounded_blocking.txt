@@ -1,0 +1,58 @@
+2025-02-21T21:07:59+08:00
+Running ./bin/gbenchmark_quill_bounded_blocking
+Run on (12 X 3200 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x6)
+  L1 Instruction 32 KiB (x6)
+  L2 Unified 256 KiB (x6)
+  L3 Unified 12288 KiB (x1)
+Load Average: 1.11, 0.74, 0.34
+------------------------------------------------------------------------------------------------------------------------
+Benchmark                                                                              Time             CPU   Iterations
+------------------------------------------------------------------------------------------------------------------------
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:1                118 ns          117 ns         2000
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:1               80.9 ns         81.0 ns         2000
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:1               84.7 ns         84.7 ns         2000
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:1               80.7 ns         78.9 ns         2000
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:1               78.6 ns         78.6 ns         2000
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:1_mean          88.6 ns         88.1 ns            5
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:1_median        80.9 ns         81.0 ns            5
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:1_stddev        16.6 ns         16.5 ns            5
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:1_cv           18.72 %         18.71 %             5
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:3               28.2 ns         84.6 ns         6000
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:3               27.9 ns         83.5 ns         6000
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:3               28.6 ns         85.6 ns         6000
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:3               29.9 ns         89.7 ns         6000
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:3               27.7 ns         83.0 ns         6000
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:3_mean          28.5 ns         85.3 ns            5
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:3_median        28.2 ns         84.6 ns            5
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:3_stddev       0.882 ns         2.65 ns            5
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:3_cv            3.10 %          3.11 %             5
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:6               1869 ns          322 ns        12000
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:6               16.0 ns         96.0 ns        12000
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:6               15.9 ns         95.0 ns        12000
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:6               15.9 ns         95.2 ns        12000
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:6               14.8 ns         88.8 ns        12000
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:6_mean           386 ns          139 ns            5
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:6_median        15.9 ns         95.2 ns            5
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:6_stddev         829 ns          102 ns            5
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:6_cv          214.55 %         73.32 %             5
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:12              10.4 ns          124 ns        24000
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:12              11.7 ns          141 ns        24000
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:12              12.3 ns          148 ns        24000
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:12              11.4 ns          137 ns        24000
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:12              10.7 ns          128 ns        24000
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:12_mean         11.3 ns          136 ns            5
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:12_median       11.4 ns          137 ns            5
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:12_stddev      0.787 ns         9.45 ns            5
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:12_cv           6.97 %          6.97 %             5
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:24              6.27 ns          151 ns        48000
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:24              5.61 ns          135 ns        48000
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:24              5.97 ns          143 ns        48000
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:24              5.99 ns          144 ns        48000
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:24              5.91 ns          142 ns        48000
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:24_mean         5.95 ns          143 ns            5
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:24_median       5.97 ns          143 ns            5
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:24_stddev      0.236 ns         5.65 ns            5
+QuillBoundedBlockingFixture/write/iterations:2000/repeats:5/threads:24_cv           3.97 %          3.96 %             5
+21:08:00 Quill INFO: Experienced 1 blocking occurrences on thread 4417

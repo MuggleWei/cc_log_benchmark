@@ -1,0 +1,57 @@
+2025-02-21T21:08:44+08:00
+Running ./bin/gbenchmark_reckless
+Run on (12 X 3200.18 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x6)
+  L1 Instruction 32 KiB (x6)
+  L2 Unified 256 KiB (x6)
+  L3 Unified 12288 KiB (x1)
+Load Average: 0.86, 0.73, 0.35
+------------------------------------------------------------------------------------------------------------
+Benchmark                                                                  Time             CPU   Iterations
+------------------------------------------------------------------------------------------------------------
+RecklessFixture/write/iterations:2000/repeats:5/threads:1                470 ns         77.9 ns         2000
+RecklessFixture/write/iterations:2000/repeats:5/threads:1                639 ns         84.5 ns         2000
+RecklessFixture/write/iterations:2000/repeats:5/threads:1                580 ns         69.2 ns         2000
+RecklessFixture/write/iterations:2000/repeats:5/threads:1                430 ns         60.8 ns         2000
+RecklessFixture/write/iterations:2000/repeats:5/threads:1                457 ns         57.4 ns         2000
+RecklessFixture/write/iterations:2000/repeats:5/threads:1_mean           515 ns         70.0 ns            5
+RecklessFixture/write/iterations:2000/repeats:5/threads:1_median         470 ns         69.2 ns            5
+RecklessFixture/write/iterations:2000/repeats:5/threads:1_stddev        89.6 ns         11.4 ns            5
+RecklessFixture/write/iterations:2000/repeats:5/threads:1_cv           17.39 %         16.23 %             5
+RecklessFixture/write/iterations:2000/repeats:5/threads:3                347 ns          131 ns         6000
+RecklessFixture/write/iterations:2000/repeats:5/threads:3                377 ns          179 ns         6000
+RecklessFixture/write/iterations:2000/repeats:5/threads:3                350 ns          187 ns         6000
+RecklessFixture/write/iterations:2000/repeats:5/threads:3                412 ns          231 ns         6000
+RecklessFixture/write/iterations:2000/repeats:5/threads:3                367 ns          182 ns         6000
+RecklessFixture/write/iterations:2000/repeats:5/threads:3_mean           371 ns          182 ns            5
+RecklessFixture/write/iterations:2000/repeats:5/threads:3_median         367 ns          182 ns            5
+RecklessFixture/write/iterations:2000/repeats:5/threads:3_stddev        26.4 ns         35.2 ns            5
+RecklessFixture/write/iterations:2000/repeats:5/threads:3_cv            7.12 %         19.34 %             5
+RecklessFixture/write/iterations:2000/repeats:5/threads:6                417 ns          600 ns        12000
+RecklessFixture/write/iterations:2000/repeats:5/threads:6                430 ns          683 ns        12000
+RecklessFixture/write/iterations:2000/repeats:5/threads:6                466 ns          781 ns        12000
+RecklessFixture/write/iterations:2000/repeats:5/threads:6                461 ns          764 ns        12000
+RecklessFixture/write/iterations:2000/repeats:5/threads:6                461 ns          783 ns        12000
+RecklessFixture/write/iterations:2000/repeats:5/threads:6_mean           447 ns          722 ns            5
+RecklessFixture/write/iterations:2000/repeats:5/threads:6_median         461 ns          764 ns            5
+RecklessFixture/write/iterations:2000/repeats:5/threads:6_stddev        22.1 ns         79.6 ns            5
+RecklessFixture/write/iterations:2000/repeats:5/threads:6_cv            4.94 %         11.02 %             5
+RecklessFixture/write/iterations:2000/repeats:5/threads:12               435 ns         1379 ns        24000
+RecklessFixture/write/iterations:2000/repeats:5/threads:12               454 ns         1497 ns        24000
+RecklessFixture/write/iterations:2000/repeats:5/threads:12               455 ns         1522 ns        24000
+RecklessFixture/write/iterations:2000/repeats:5/threads:12               448 ns         1495 ns        24000
+RecklessFixture/write/iterations:2000/repeats:5/threads:12               447 ns         1504 ns        24000
+RecklessFixture/write/iterations:2000/repeats:5/threads:12_mean          448 ns         1480 ns            5
+RecklessFixture/write/iterations:2000/repeats:5/threads:12_median        448 ns         1497 ns            5
+RecklessFixture/write/iterations:2000/repeats:5/threads:12_stddev       8.02 ns         57.4 ns            5
+RecklessFixture/write/iterations:2000/repeats:5/threads:12_cv           1.79 %          3.88 %             5
+RecklessFixture/write/iterations:2000/repeats:5/threads:24               388 ns         1565 ns        48000
+RecklessFixture/write/iterations:2000/repeats:5/threads:24               393 ns         1617 ns        48000
+RecklessFixture/write/iterations:2000/repeats:5/threads:24               392 ns         1582 ns        48000
+RecklessFixture/write/iterations:2000/repeats:5/threads:24               399 ns         1564 ns        48000
+RecklessFixture/write/iterations:2000/repeats:5/threads:24               395 ns         1595 ns        48000
+RecklessFixture/write/iterations:2000/repeats:5/threads:24_mean          393 ns         1584 ns            5
+RecklessFixture/write/iterations:2000/repeats:5/threads:24_median        393 ns         1582 ns            5
+RecklessFixture/write/iterations:2000/repeats:5/threads:24_stddev       4.12 ns         22.2 ns            5
+RecklessFixture/write/iterations:2000/repeats:5/threads:24_cv           1.05 %          1.40 %             5

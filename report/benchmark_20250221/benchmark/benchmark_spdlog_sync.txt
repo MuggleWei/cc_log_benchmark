@@ -1,0 +1,61 @@
+2025-02-21T21:09:32+08:00
+Running ./bin/gbenchmark_spdlog_sync
+Run on (12 X 3200 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x6)
+  L1 Instruction 32 KiB (x6)
+  L2 Unified 256 KiB (x6)
+  L3 Unified 12288 KiB (x1)
+Load Average: 0.87, 0.76, 0.38
+-------------------------------------------------------------------------------------------------------------
+Benchmark                                                                   Time             CPU   Iterations
+-------------------------------------------------------------------------------------------------------------
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:1                618 ns          617 ns         2000
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:1                597 ns          595 ns         2000
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:1                587 ns          587 ns         2000
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:1                562 ns          561 ns         2000
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:1                560 ns          560 ns         2000
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:1_mean           585 ns          584 ns            5
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:1_median         587 ns          587 ns            5
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:1_stddev        24.5 ns         24.3 ns            5
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:1_cv            4.19 %          4.17 %             5
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:3                922 ns         1676 ns         6000
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:3                870 ns         1559 ns         6000
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:3                910 ns         1667 ns         6000
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:3                901 ns         1648 ns         6000
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:3                906 ns         1673 ns         6000
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:3_mean           902 ns         1645 ns            5
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:3_median         906 ns         1667 ns            5
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:3_stddev        19.3 ns         49.0 ns            5
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:3_cv            2.14 %          2.98 %             5
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:6               1106 ns         2581 ns        12000
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:6               1044 ns         2517 ns        12000
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:6               1087 ns         2552 ns        12000
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:6               1027 ns         2528 ns        12000
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:6               1023 ns         2530 ns        12000
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:6_mean          1057 ns         2542 ns            5
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:6_median        1044 ns         2530 ns            5
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:6_stddev        37.0 ns         25.2 ns            5
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:6_cv            3.50 %          0.99 %             5
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:12              1290 ns         3041 ns        24000
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:12              1271 ns         2951 ns        24000
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:12              1261 ns         2925 ns        24000
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:12              1266 ns         2937 ns        24000
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:12              1250 ns         2890 ns        24000
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:12_mean         1267 ns         2949 ns            5
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:12_median       1266 ns         2937 ns            5
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:12_stddev       14.8 ns         56.3 ns            5
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:12_cv           1.16 %          1.91 %             5
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:24              1259 ns         2919 ns        48000
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:24              1245 ns         2932 ns        48000
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:24              1246 ns         2956 ns        48000
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:24              1249 ns         2950 ns        48000
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:24              1248 ns         2915 ns        48000
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:24_mean         1249 ns         2935 ns            5
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:24_median       1248 ns         2932 ns            5
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:24_stddev       5.67 ns         18.5 ns            5
+SpdlogSyncFixture/sync/iterations:2000/repeats:5/threads:24_cv           0.45 %          0.63 %             5
+SpdlogSyncFixture/sync/min_time:3.000/threads:1                           556 ns          553 ns      7632186
+SpdlogSyncFixture/sync/min_time:3.000/threads:2                           764 ns         1241 ns      3303674
+SpdlogSyncFixture/sync/min_time:3.000/threads:4                          1009 ns         2070 ns      2156296
+SpdlogSyncFixture/sync/min_time:3.000/threads:8                          1235 ns         2877 ns      1501384
