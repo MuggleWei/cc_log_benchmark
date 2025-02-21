@@ -77,7 +77,7 @@ analyzing CPU 7:
 **由于个人水平所限, 若有错误和纰漏, 亦或是考虑欠妥之处, 还请不吝指正!**  
 
 ## 基准测试结果
-在 [gbenchmark](./report/benchmark_20250221/gbenchmark) 目录中, 可以找到我本地机器的基准测试报告的详细信息, 图表化表示如下:  
+在 [benchmark](./report/benchmark_20250221/benchmark) 目录中, 可以找到我本地机器的基准测试报告的详细信息, 图表化表示如下:  
 
 **场景1**: 设定最小的测试时间 (x轴: 日志库+线程数, y轴: google benchmark - Time)
 <img src="./report/benchmark_20250221/img/min_time.svg" />

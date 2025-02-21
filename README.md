@@ -75,7 +75,7 @@ Due to some problems encountered during benchmark on my local machine, `fmtlog`,
 **Due to personal limitations, if there are any errors, omissions, or lack of consideration, please feel free to correct me!**
 
 ## Result of Benchmark
-In the [gbenchmark](./report/benchmark_20250221/gbenchmark) directory, you can find the details of the benchmark report of my local machine, graphically represented as follows:  
+In the [benchmark](./report/benchmark_20250221/benchmark) directory, you can find the details of the benchmark report of my local machine, graphically represented as follows:  
 
 **Scenario 1**: Determine the minimum test time (x axis: logging library + number of threads, y axis: google benchmark - Time)
 <img src="./report/benchmark_20250221/img/min_time.svg" />
