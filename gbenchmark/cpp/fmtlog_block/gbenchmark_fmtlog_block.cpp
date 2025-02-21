@@ -42,6 +42,8 @@ public:
 			fmtlog::setHeaderPattern("{l}|{YmdHMSF}|{s}|{t} - ");
 			fmtlog::setLogQFullCB([](void *) { qfull_times += 1; }, nullptr);
 
+			fmtlog::startPollingThread(100);
+
 			FMTLOG(fmtlog::INF, "hello");
 		});
 	}

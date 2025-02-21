@@ -23,8 +23,7 @@ run_benchmark() {
 
 run_benchmark easyloggingpp
 run_benchmark fmtlog
-# NOTE: fmtlog with FMTLOG_BLOCK will be stuck
-#run_benchmark fmtlog_block
+run_benchmark fmtlog_block
 run_benchmark glog
 run_benchmark haclog
 run_benchmark loguru
