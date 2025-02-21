@@ -91,8 +91,8 @@ static void DoTeardown(const benchmark::State &);
 			idx = (idx + 1) % n_msg;                                          \
 		}                                                                     \
 	}                                                                         \
-	RUN_GBENCHMARK_MIN_TIME(fixture, name)                                    \
 	RUN_GBENCHMARK_ITER_REPEAT(fixture, name)                                 \
+	RUN_GBENCHMARK_MIN_TIME(fixture, name)                                    \
 	BENCHMARK_MAIN();
 
 #endif // !LOG_GBENCHMARK_H_
