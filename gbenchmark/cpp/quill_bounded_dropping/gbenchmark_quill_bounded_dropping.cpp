@@ -55,7 +55,7 @@ public:
 
 			// frontend
 			auto sink = CustomFrontend::create_or_get_sink<quill::FileSink>(
-				"logs/gbenchmark_quill_bounded_blocking.log");
+				"logs/gbenchmark_quill_bounded_dropping.log");
 			logger = CustomFrontend::create_or_get_logger(
 				"root", std::move(sink),
 				quill::PatternFormatterOptions("[%(log_level)]|"

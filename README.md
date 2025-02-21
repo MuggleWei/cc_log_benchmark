@@ -23,7 +23,7 @@ Run `build.sh` (`build.bat` in Windows) to build, The log library under test wil
 Note: Since some log libraries do not support all platforms, Only linux can guarantee all log libraries be tested.  
 
 ## Benchmark
-Date: 2025-02-14  
+Date: 2025-02-21  
 Log libraries' version, see: [CMakeLists.txt](./CMakeLists.txt)  
 Write data per time:
 ```
@@ -68,7 +68,6 @@ Before starting the benchmark, run `scripts/set_cpu_freq.sh` to limit the CPU fr
 
 ### Extra Instructions
 Due to some problems encountered during benchmark on my local machine, `fmtlog`, `quill` and `reckless` did not fully cover all scenarios.  
-* When `#define FMTLOG_BLOCK 1` in `fmtlog`, the benchmark process will be stuck and unable to continue, so `fmtlog` only tested the mode that discard log when the buffer is full
 * Since we want to write logs as fast as possible, quill only tests the scenario under `BOUNDED`
 * In **Scenario 1**, `quill::QueueType::BoundedBlocking` lead the process be stuck, so this mode skips **Scenario 1**
 * I did not find the interface to set the buffer size for `Nanolog`, so I only used the default buffer size with them
@@ -76,13 +75,13 @@ Due to some problems encountered during benchmark on my local machine, `fmtlog`,
 **Due to personal limitations, if there are any errors, omissions, or lack of consideration, please feel free to correct me!**
 
 ## Result of Benchmark
-In the [gbenchmark](./report/benchmark_20250214/gbenchmark) directory, you can find the details of the benchmark report of my local machine, graphically represented as follows:  
+In the [gbenchmark](./report/benchmark_20250221/gbenchmark) directory, you can find the details of the benchmark report of my local machine, graphically represented as follows:  
 
 **Scenario 1**: Determine the minimum test time (x axis: logging library + number of threads, y axis: google benchmark - Time)
-<img src="./report/benchmark_20250214/img/min_time.svg" />
+<img src="./report/benchmark_20250221/img/min_time.svg" />
 
 **Scenario 2**: Determine the number of iterations and repetitions (x axis: logging library + number of threads, y axis: google benchmark - Time)
-<img src="./report/benchmark_20250214/img/iter_repeat.svg" />
+<img src="./report/benchmark_20250221/img/iter_repeat.svg" />
 
 ### About the y-axis values 
 The y-axis is google benchmark - Time. In the case of multi-threading, it does not represent the average single time consumption, but the average result based on throughput and time. The formula is:
@@ -117,18 +116,17 @@ The above four log libraries are all asynchronous log libraries. They are also a
 3. **Expand**: Dynamically increase the buffer length and continue writing
 
 `haclog` and `Nanolog` chose option 1, `fmtlog` chose option 1/2, and `quill` chose option 1/2/3.  
-Due to the situation mentioned in [Extra Instructions](#extra-instructions), `fmtlog` can only choose option 2, and `quill` only discusses bounded mode.  
+Due to the situation mentioned in [Extra Instructions](#extra-instructions), we hope that logs can be written as quickly as possible, so `quill` only discusses bounded mode.  
 
 ### fmtlog
 advantage
-* It shows good speed in both scenarios, among which the speed in **Scenario 1** is on par with `quill` and tied for the fastest speed
-* In both scenarios, the stability of speed performance is good enough and the fluctuation is small
+* Good speed in both scenarios
+* If log loss is allowed when the buffer is full, the speed is tied with `quill` for the fastest speed in **Scenario 1**
+* Supports blocking mode when the buffer is full, and will not lose logs
 * Use `format` formatting style
 
 disadvantages
-* A large number of lost logs occurred in **Scenario 1**
-* Lost logs also occurred in **Scenario 2**
-* When setting `#define FMTLOG_BLOCK 1`, the benchmark of **Scenario 1** cannot be completed
+* In drop mode, log loss occurred in both **Scenario 1** and **Scenario 2**  
 
 ### haclog
 advantage
@@ -141,7 +139,7 @@ disadvantages
 ### Nanolog
 advantage
 * Good speed in both scenarios
-* Very high throughput. Although the efficiency is reduced in **Scenario 1**, it still has a huge advantage over other synchronous logs
+* Very high throughput. In scenarios where log loss is not tolerated, whether it is **Scene 1** or **Scene 2**, it's the absolute kings
 * When the buffer is full, blocking mode is adopted and no logs will be lost
 
 disadvantages
@@ -150,10 +148,10 @@ disadvantages
 
 ### quill
 advantage
-* It has good speed in both scenarios, and in **Scenario 1**, it is the fastest with fmtlog
-* In both scenarios, the stability of speed performance is good enough and the fluctuation is small
+* Good speed in both scenarios
+* If log loss is allowed when the buffer is full, the speed is tied with `fmtlog` for the fastest speed in **Scenario 1**
 * Use `format` formatting style
-* It supports blocking mode when the buffer is full, although the efficiency is reduced, but logs can be saved
+* Supports blocking mode when the buffer is full, and will not lose logs
 
 disadvantages
 * Log loss may occur in `quill::QueueType::BoundedDropping` mode
@@ -167,10 +165,10 @@ disadvantages
   * C++ performs serialization through Variadic template, and the assembly code can be implemented in the form of flat expansion, exchanging space for time
 
 ## Summary
-* `fmtlog` and `quill` use the format formatting style, which is easy to write and has strong speed stability.
-  * In **Scenario 1**, it performs well. However, as analyzed in the previous section, the speed of this scenario is partly achieved by log loss, which requires special attention in the usage scenario; and when the blocking mode is turned on, **Scenario 1** cannot be completed on my machine
-  * Both also support blocking mode when the buffer is full. In **Scenario 2**, when fmtlog is in blocking mode, the test cannot be completed, while when quill is in blocking mode, the efficiency is reduced, but it is still very good.
+* `fmtlog` and `quill` use the format formatting style, which is easy to write
+  * In **Scenario 1**, `fmtlog_drop` 和 `quill_bounded_dropping` performs well. However, as analyzed in the previous section, the speed of this scenario is partly achieved by log loss, which requires special attention in the usage scenario.
+  * Both also support blocking mode when the buffer is full.
 * `haclog` performs well in **Scenario 2**, but in **Scenario 1** when the buffer is full, it can ensure that no logs are lost, but the efficiency is greatly reduced
-* `Nanolog` has high efficiency and throughput in both scenarios. Under pressure, it can ensure that logs are not lost without sacrificing efficiency. However, its high throughput is achieved at the cost of non-real-time readability of logs, which also makes tools such as `tail` unusable.
+* `Nanolog` has high efficiency and throughput in both scenarios. Under pressure, it can ensure that logs are not lost without sacrificing large amount efficiency. In scenarios where log loss is not tolerated, it's the absolute king. However, its high throughput is achieved at the cost of non-real-time readability of logs, which also makes tools such as `tail` unusable.
 
 It can be seen that none of the current asynchronous logs can crush other log libraries in all aspects, but they all make trade-offs in some aspects.  

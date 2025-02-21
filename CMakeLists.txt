@@ -332,10 +332,10 @@ if (benchmark_easyloggingpp)
 endif()
 
 if (benchmark_fmtlog)
-	add_gbench(fmtlog ${gbenchmark_dir}/cpp/fmtlog)
-	add_dependencies(gbenchmark_fmtlog fmtlog-static fmt)
-	target_link_libraries(gbenchmark_fmtlog fmtlog-static fmt)
-	target_include_directories(gbenchmark_fmtlog PUBLIC
+	add_gbench(fmtlog_drop ${gbenchmark_dir}/cpp/fmtlog_drop)
+	add_dependencies(gbenchmark_fmtlog_drop fmtlog-static fmt)
+	target_link_libraries(gbenchmark_fmtlog_drop fmtlog-static fmt)
+	target_include_directories(gbenchmark_fmtlog_drop PUBLIC
 		${FETCHCONTENT_BASE_DIR}/fmtlog-src/
 		${FETCHCONTENT_BASE_DIR}/fmtlog-src/fmt/include
 		)

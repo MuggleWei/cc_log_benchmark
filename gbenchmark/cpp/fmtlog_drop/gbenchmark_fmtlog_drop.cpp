@@ -38,9 +38,11 @@ public:
 	{
 		std::call_once(init_flag, []() {
 			std::filesystem::create_directories("logs");
-			fmtlog::setLogFile("./logs/gbenchmark_fmtlog.log", true);
+			fmtlog::setLogFile("./logs/gbenchmark_fmtlog_drop.log", true);
 			fmtlog::setHeaderPattern("{l}|{YmdHMSF}|{s}|{t} - ");
 			fmtlog::setLogQFullCB([](void *) { qfull_times += 1; }, nullptr);
+
+			fmtlog::startPollingThread(100);
 
 			FMTLOG(fmtlog::INF, "hello");
 		});

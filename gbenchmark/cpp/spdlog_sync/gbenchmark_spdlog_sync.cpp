@@ -34,7 +34,7 @@ public:
 		std::call_once(init_flag, []() {
 			try {
 				auto logger = spdlog::basic_logger_mt(
-					"root", "logs/gbenchmark_spdlog_basic.log", true);
+					"root", "logs/gbenchmark_spdlog_sync.log", true);
 				logger->set_level(spdlog::level::debug);
 				logger->set_pattern("%l|%E.%F|%s|%!|%t - %v");
 

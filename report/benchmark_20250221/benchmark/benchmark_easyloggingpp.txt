@@ -1,0 +1,61 @@
+2025-02-21T21:04:36+08:00
+Running ./bin/gbenchmark_easyloggingpp
+Run on (12 X 3200 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x6)
+  L1 Instruction 32 KiB (x6)
+  L2 Unified 256 KiB (x6)
+  L3 Unified 12288 KiB (x1)
+Load Average: 0.23, 0.25, 0.11
+---------------------------------------------------------------------------------------------------------------
+Benchmark                                                                     Time             CPU   Iterations
+---------------------------------------------------------------------------------------------------------------
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:1               3684 ns         3679 ns         2000
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:1               3598 ns         3594 ns         2000
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:1               3640 ns         3634 ns         2000
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:1               3594 ns         3591 ns         2000
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:1               3625 ns         3614 ns         2000
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:1_mean          3628 ns         3623 ns            5
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:1_median        3625 ns         3614 ns            5
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:1_stddev        36.4 ns         36.1 ns            5
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:1_cv            1.00 %          1.00 %             5
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:3               3138 ns         5508 ns         6000
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:3               3565 ns         5711 ns         6000
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:3               2997 ns         5355 ns         6000
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:3               3574 ns         6041 ns         6000
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:3               3513 ns         5991 ns         6000
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:3_mean          3358 ns         5721 ns            5
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:3_median        3513 ns         5711 ns            5
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:3_stddev         270 ns          298 ns            5
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:3_cv            8.05 %          5.21 %             5
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:6               2994 ns         5993 ns        12000
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:6               2726 ns         5917 ns        12000
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:6               2774 ns         5855 ns        12000
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:6               2903 ns         5795 ns        12000
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:6               2878 ns         5792 ns        12000
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:6_mean          2855 ns         5871 ns            5
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:6_median        2878 ns         5855 ns            5
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:6_stddev         107 ns         85.5 ns            5
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:6_cv            3.73 %          1.46 %             5
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:12              2924 ns         6656 ns        24000
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:12              2750 ns         6429 ns        24000
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:12              2702 ns         6406 ns        24000
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:12              2656 ns         6444 ns        24000
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:12              2654 ns         6443 ns        24000
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:12_mean         2737 ns         6476 ns            5
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:12_median       2702 ns         6443 ns            5
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:12_stddev        112 ns          102 ns            5
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:12_cv           4.08 %          1.57 %             5
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:24              2721 ns         6707 ns        48000
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:24              2691 ns         6570 ns        48000
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:24              2694 ns         6633 ns        48000
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:24              2662 ns         6590 ns        48000
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:24              2636 ns         6555 ns        48000
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:24_mean         2681 ns         6611 ns            5
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:24_median       2691 ns         6590 ns            5
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:24_stddev       32.4 ns         61.0 ns            5
+EasyLoggingFixture/write/iterations:2000/repeats:5/threads:24_cv           1.21 %          0.92 %             5
+EasyLoggingFixture/write/min_time:3.000/threads:1                          3729 ns         3721 ns      1123028
+EasyLoggingFixture/write/min_time:3.000/threads:2                          4423 ns         5870 ns       731802
+EasyLoggingFixture/write/min_time:3.000/threads:4                          4193 ns         6068 ns       684056
+EasyLoggingFixture/write/min_time:3.000/threads:8                          3382 ns         6550 ns       653904

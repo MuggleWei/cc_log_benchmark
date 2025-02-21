@@ -4,7 +4,6 @@
 #include <vector>
 #include <mutex>
 #include "log_msg/log_msg.h"
-// FMTLOG_BLOCK=1, stuck!!!
 #include "gbenchmark/log_gbenchmark.h"
 #define FMTLOG_BLOCK 1
 #include "fmtlog.h"
@@ -40,7 +39,9 @@ public:
 			std::filesystem::create_directories("logs");
 			fmtlog::setLogFile("./logs/gbenchmark_fmtlog_block.log", true);
 			fmtlog::setHeaderPattern("{l}|{YmdHMSF}|{s}|{t} - ");
-			fmtlog::setLogQFullCB([](void *) { qfull_times += 1; }, nullptr);
+			// fmtlog::setLogQFullCB([](void *) { qfull_times += 1; }, nullptr);
+
+			fmtlog::startPollingThread(100);
 
 			FMTLOG(fmtlog::INF, "hello");
 		});
@@ -48,11 +49,11 @@ public:
 
 	void TearDown(const benchmark::State &state)
 	{
-		if (qfull_times > 0) {
-			fprintf(stderr, "state: %s, QFull times: %u\n",
-					state.name().c_str(), qfull_times);
-			qfull_times = 0;
-		}
+		// if (qfull_times > 0) {
+		//     fprintf(stderr, "state: %s, QFull times: %u\n",
+		//             state.name().c_str(), qfull_times);
+		//     qfull_times = 0;
+		// }
 	}
 
 public:

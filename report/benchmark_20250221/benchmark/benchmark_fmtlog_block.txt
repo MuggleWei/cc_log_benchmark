@@ -1,0 +1,61 @@
+2025-02-21T21:05:36+08:00
+Running ./bin/gbenchmark_fmtlog_block
+Run on (12 X 3200.4 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x6)
+  L1 Instruction 32 KiB (x6)
+  L2 Unified 256 KiB (x6)
+  L3 Unified 12288 KiB (x1)
+Load Average: 0.74, 0.39, 0.17
+---------------------------------------------------------------------------------------------------------------
+Benchmark                                                                     Time             CPU   Iterations
+---------------------------------------------------------------------------------------------------------------
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:1                234 ns          168 ns         2000
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:1               99.8 ns         99.9 ns         2000
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:1               93.3 ns         93.4 ns         2000
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:1                103 ns          101 ns         2000
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:1                367 ns          367 ns         2000
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:1_mean           179 ns          166 ns            5
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:1_median         103 ns          101 ns            5
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:1_stddev         120 ns          117 ns            5
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:1_cv           66.98 %         70.31 %             5
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:3               90.9 ns          271 ns         6000
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:3               90.7 ns          271 ns         6000
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:3               93.6 ns          279 ns         6000
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:3                182 ns          543 ns         6000
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:3                182 ns          546 ns         6000
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:3_mean           128 ns          382 ns            5
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:3_median        93.6 ns          279 ns            5
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:3_stddev        49.6 ns          148 ns            5
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:3_cv           38.76 %         38.84 %             5
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:6               69.3 ns          416 ns        12000
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:6               73.9 ns          440 ns        12000
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:6               74.5 ns          446 ns        12000
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:6               94.9 ns          568 ns        12000
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:6               97.2 ns          583 ns        12000
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:6_mean          82.0 ns          491 ns            5
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:6_median        74.5 ns          446 ns            5
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:6_stddev        13.0 ns         78.6 ns            5
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:6_cv           15.92 %         16.02 %             5
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:12              45.4 ns          540 ns        24000
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:12              38.5 ns          462 ns        24000
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:12              65.7 ns          769 ns        24000
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:12              48.4 ns          580 ns        24000
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:12              96.8 ns         1160 ns        24000
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:12_mean         59.0 ns          702 ns            5
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:12_median       48.4 ns          580 ns            5
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:12_stddev       23.4 ns          280 ns            5
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:12_cv          39.72 %         39.84 %             5
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:24              28.9 ns          663 ns        48000
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:24              26.5 ns          634 ns        48000
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:24              31.2 ns          748 ns        48000
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:24              40.0 ns          923 ns        48000
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:24              31.2 ns          746 ns        48000
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:24_mean         31.6 ns          743 ns            5
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:24_median       31.2 ns          746 ns            5
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:24_stddev       5.09 ns          113 ns            5
+FmtlogBlockFixture/write/iterations:2000/repeats:5/threads:24_cv          16.12 %         15.17 %             5
+FmtlogBlockFixture/write/min_time:3.000/threads:1                           378 ns          377 ns     11608679
+FmtlogBlockFixture/write/min_time:3.000/threads:2                           372 ns          743 ns      5574068
+FmtlogBlockFixture/write/min_time:3.000/threads:4                           387 ns         1545 ns      2779452
+FmtlogBlockFixture/write/min_time:3.000/threads:8                           406 ns         3246 ns      1353360
