@@ -64,7 +64,7 @@ analyzing CPU 7:
      Active: yes
 ```
 
-Before starting the benchmark, run `scripts/set_cpu_freq.sh` to limit the CPU frequency to a fixed value (here I chose 3.2GHz). Then, when running the benchmark, run `scripts/monitor_cpu_freq.sh` to monitor the CPU frequency, and confirm that there is no rate drop due to high CPU temperature.
+Before starting the benchmark, use `cpupower` to limit the CPU frequency to a fixed value (here I chose 3.2GHz). Then, when running the benchmark, run `sudo turbostat --show CPU,frequency -i 1` to monitor the CPU frequency, and confirm that there is no rate drop due to high CPU temperature.
 
 ### Extra Instructions
 Due to some problems encountered during benchmark on my local machine, `fmtlog`, `quill` and `reckless` did not fully cover all scenarios.  
@@ -171,4 +171,4 @@ disadvantages
 * `haclog` performs well in **Scenario 2**, but in **Scenario 1** when the buffer is full, it can ensure that no logs are lost, but the efficiency is greatly reduced
 * `Nanolog` has high efficiency and throughput in both scenarios. Under pressure, it can ensure that logs are not lost without sacrificing large amount efficiency. In scenarios where log loss is not tolerated, it's the absolute king. However, its high throughput is achieved at the cost of non-real-time readability of logs, which also makes tools such as `tail` unusable.
 
-It can be seen that none of the current asynchronous logs can crush other log libraries in all aspects, but they all make trade-offs in some aspects.  
+It can be seen that none of the current asynchronous logs can crush other log libraries in all aspects, but they all make trade-offs in some aspects.
